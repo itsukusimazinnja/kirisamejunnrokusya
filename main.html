@@ -37,18 +37,26 @@
             gap: 30px;
         }
 
-       
-        <!-- 左側：メニューエリア -->
-<nav>
-    <ul>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#works">WORKS</a></li>
-        <li><a href="#info">INFORMATION</a></li>
-        <li><a href="#link">LINK</a></li>
-        <li><a href="https://www1.rocketbbs.com/110/kuroha07.html"target="_blank">BBS</a></li>
-        <li style="margin-top: 30px;"><a href="index.html">← RETURN</a></li>
-    </ul>
-</nav>
+        nav {
+            width: 180px;
+            border-right: 1px solid #333333;
+            padding-right: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #8a9ea7;
+            text-decoration: underline;
+        }
 
         a:hover {
             color: #ffffff;
@@ -111,13 +119,14 @@
 
     <div class="content-wrap">
 
-        <!-- 左側：メニューエリア（順番を変更） -->
+        <!-- 左側：メニューエリア（BBSを追加） -->
         <nav>
             <ul>
                 <li><a href="#about">ABOUT</a></li>
                 <li><a href="#works">WORKS</a></li>
                 <li><a href="#info">INFORMATION</a></li>
                 <li><a href="#link">LINK</a></li>
+                <li><a href="https://www1.rocketbbs.com/00008/kuroha07.html" target="_blank">BBS</a></li>
                 <li style="margin-top: 30px;"><a href="index.html">← RETURN</a></li>
             </ul>
         </nav>
