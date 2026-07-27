@@ -18,6 +18,24 @@
             margin: 0 auto;
         }
 
+
+        /* 更新履歴の枠（デザイン） */
+        .update-box {
+            background-color: #050505;
+            border: 1px solid #222222;
+            padding: 15px;
+            height: 120px;          /* 枠の高さ */
+            overflow-y: scroll;     /* 履歴が増えたらスクロールできる */
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .update-date {
+            color: #8a9ea7;
+            margin-right: 10px;
+        }
+        
         
         /* 雲と雨の画像を活かすヘッダー設定 */
         header {
@@ -131,6 +149,25 @@
 <body>
 
 <div class="container">
+
+    
+
+        <!-- ヘッダー画像 -->
+        <img src="header.jpg" alt="霧雨巡録社" class="header-banner" onerror="this.style.display='none'">
+
+        <!-- ▼ 更新履歴（ここを追加） -->
+        <h2>更新履歴</h2>
+        <div class="update-box">
+            <span class="update-date">2026/07/27</span> Webサイト『霧雨巡録社』開設 / 日記『百記夜行』開設 / アクセスカウンター設置　 / 更新履歴設置<br>
+        </div>
+
+        <h2 id="about">紹介</h2>
+        <p>
+            こんばんは。ここは「霧雨巡録社」のメインページです。<br>
+            ...
+
+
+            
 
     <header>
         <h1>霧雨巡録社</h1>
