@@ -32,6 +32,24 @@
             margin: 0;
         }
 
+
+        /* 日記ページ最下部に百鬼夜行の揺らめきを配置 */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 100px 20px 30px; /* 上部に余裕を持たせて画像を魅せる */
+    border-top: 1px solid #333333;
+    font-size: 0.8em;
+    color: #666666;
+    
+    /* 下から上へ黒く溶け込ませるグラデーション ＋ 画像 */
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1.0) 90%),
+        url('IMG_2390.jpeg');
+    background-size: cover;
+    background-position: center bottom;
+}
+
         .content-wrap {
             display: flex;
             gap: 30px;
