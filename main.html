@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>霧雨巡録社 - MAIN</title>
     <style>
+        /* ここ（デザイン設定）は触らなくてOKです */
         body {
             background-color: #000000;
             color: #dcdcdc;
@@ -18,7 +19,6 @@
             margin: 0 auto;
         }
 
-        /* サイトの簡易ヘッダー */
         header {
             text-align: center;
             border-bottom: 1px solid #333333;
@@ -33,13 +33,11 @@
             margin: 0;
         }
 
-        /* 2カラムレイアウト設定 */
         .content-wrap {
             display: flex;
             gap: 30px;
         }
 
-        /* 左側：メニューエリア */
         nav {
             width: 180px;
             border-right: 1px solid #333333;
@@ -65,7 +63,6 @@
             color: #ffffff;
         }
 
-        /* 右側：メインコンテンツエリア */
         main {
             flex: 1;
         }
@@ -101,6 +98,12 @@
             margin-bottom: 8px;
         }
 
+        .work-item {
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 0.95em;
+        }
+
         footer {
             text-align: center;
             margin-top: 50px;
@@ -121,7 +124,7 @@
 
     <div class="content-wrap">
 
-        <!-- 左側：ナビゲーションメニュー -->
+        <!-- 左側：メニューエリア（ここは基本このままでOK） -->
         <nav>
             <ul>
                 <li><a href="main.html">TOP / NEWS</a></li>
@@ -132,34 +135,73 @@
             </ul>
         </nav>
 
-        <!-- 右側：メイン領域 -->
+        <!-- 右側：メインコンテンツ -->
         <main>
             
-            <!-- 更新履歴 -->
+            <!-- ① 更新履歴 -->
             <section>
                 <div class="section-title">INFORMATION</div>
                 <div class="update-box">
                     <dl>
-                        <dt>2026/07/27</dt>
-                        <dd>Webサイト公開。試運転開始。</dd>
+                        <!-- ★★★ ここから自由に変更・追加OK ★★★ -->
+
+                        <dt>2025/06/06</dt>
+                        <dd>処女作『陰鬱な世界を謳歌する』制作開始</dd>
+
+                        <dt>2025/06/08</dt>
+                        <dd>第一作目完結</dd>
+                        <dt>2025/11/23</dt>
+                        <dd>第二作目『偏差値71の妖怪怪異譚』制作開始</dd>  
+                        <dt>2026/01/12</dt>
+                        <dd>第二作目完結。</dd>
+                        <dt>2026/03/16</dt>
+                        <dd>第三作目『ATOMSPHERE』制作開始</dd>
+                 
+                        <!-- 新しいお知らせを載せたい時は、上の2行をコピーして下に増やしていくだけでOKです -->
+                        <!-- ★★★ ここまで ★★★ -->
                     </dl>
                 </div>
             </section>
 
-            <!-- 挨拶・ABOUT枠 -->
+            <!-- ② サークル紹介 -->
             <section id="about" style="margin-bottom: 40px;">
                 <div class="section-title">ABOUT</div>
                 <p style="font-size: 0.9em; text-align: left;">
-                    サークル「霧雨巡録社」のWeb拠点です。<br>
-                    文章作品（短編集）の編纂や、ノベルゲーム等の制作物を公開・案内していきます。
+                    <!-- ★★★ ここから文章を自由に書き換えてOK ★★★ -->
+                    当サークル「霧雨巡録社」のメインページです。<br>
+                    小説作品の公開やノベルゲームなどの進捗案内を行っています。<br>
+                    筆者：暮葉畏啓（くろはいけい）
+                    <!-- ★★★ ここまで ★★★ -->
                 </p>
             </section>
 
-            <!-- 作品一覧枠 -->
-            <section id="works">
+            <!-- ③ 作品一覧 -->
+            <section id="works" style="margin-bottom: 40px;">
                 <div class="section-title">WORKS</div>
+                
+                <!-- ★★★ 作品情報を載せる場所 ★★★ -->
+                <div class="work-item">
+                    <strong>■ 作品タイトル（例：短編集など）</strong><br>
+                    作品の説明文をここに書きます。小説家になろうへのリンクや、作品の簡単なあらすじなどを置いておく場所です。<br>
+                    <a href="作品のURLなど" target="_blank">→ 読む・詳細を見る</a>
+                </div>
+
+                <div class="work-item">
+                    <strong>■ 制作中のノベルゲーム</strong><br>
+                    現在制作中のゲームや自作ソフト等の案内スペースです。
+                </div>
+                <!-- ★★★ ここまで ★★★ -->
+
+            </section>
+
+            <!-- ④ リンク・その他 -->
+            <section id="link">
+                <div class="section-title">LINK</div>
                 <p style="font-size: 0.9em; text-align: left;">
-                    準備中...
+                    <!-- ★★★ 自分のSNSや外部サイトのリンク ★★★ -->
+                    ・<a href="https://syosetu.com/" target="_blank">小説家になろう</a><br>
+                    ・<a href="https://pixiv.net/" target="_blank">pixiv</a>
+                    <!-- ★★★ ここまで ★★★ -->
                 </p>
             </section>
 
