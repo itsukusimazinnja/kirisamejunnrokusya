@@ -2,10 +2,8 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <!-- ブラウザのタブに表示されるサイト名 -->
     <title>霧雨巡録社のページ</title>
     
-    <!-- デザインの設定（ここはいじらなくてOKです） -->
     <style>
         body {
             background-color: #000000;
@@ -22,9 +20,11 @@
             margin: 0 auto;
         }
 
+        /* ヘッダー画像の縦幅を抑制する設定 */
         .header-banner {
             max-width: 100%;
-            height: auto;
+            max-height: 250px;
+            object-fit: contain;
             margin-bottom: 20px;
         }
 
@@ -74,10 +74,10 @@
 
 <div class="container">
 
-    <!-- ① トップのヘッダー画像（画像がない時は自動で隠れます） -->
+    <!-- ① トップのヘッダー画像 -->
     <div>
         <a href="main.html">
-            <img src="IMG_2371.jpeg" alt=" good morning" class="header-banner" onerror="this.style.display='none'">
+            <img src="IMG_2371.jpeg" alt="good morning" class="header-banner" onerror="this.style.display='none'">
         </a>
     </div>
 
@@ -89,7 +89,7 @@
     <!-- ③ サークルの紹介文・挨拶 -->
     <div class="description">
         <p>
-        　　　霧雨に打たれて大地は歪む。<br>
+               霧雨に打たれて大地は歪む。<br>
             筆者は鬼ごっこが大好きなようです。<br>
             転載はルール違反です、知らなかったでは済みませんよ
         </p>
@@ -107,13 +107,13 @@
     <div class="banner-area">
         <p>
             バナーは 
-            <img src="banner.gif" alt="サークルバナー" style="vertical-align: middle;" onerror="this.style.display='none'">
+            <img src="IMG_2371.jpeg" alt="サークルバナー" style="vertical-align: middle;" width="200" onerror="this.style.display='none'">
             <br>
             <span class="code-box">
-                &lt;img src="★ここに自分のサイトのバナー画像URL★" width=200 height=40&gt;
+                &lt;img src="https://itsukusimazinnja.github.io/kirisamejunnrokusya/IMG_2371.jpeg" width=200&gt;
             </span>
             <br>
-            ★ここにバナー貼り付けに関する指示（例：とかお書き下さい。）★
+            等とお書き下さい。
         </p>
     </div>
 
