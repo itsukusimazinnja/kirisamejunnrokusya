@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>百記夜行</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #dcdcdc;
+            font-family: "MS P明朝", "MS Mincho", "Hiragino Mincho ProN", serif;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.8;
+        }
+
+        .container {
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 1px solid #333333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 1.6em;
+            font-weight: normal;
+            letter-spacing: 4px;
+            margin: 0;
+        }
+
+        .content-wrap {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav {
+            width: 180px;
+            border-right: 1px solid #333333;
+            padding-right: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #8a9ea7;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 1.1em;
+            border-left: 3px solid #8a9ea7;
+            padding-left: 10px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .diary-entry {
+            margin-bottom: 40px;
+            border-bottom: 1px dashed #333333;
+            padding-bottom: 20px;
+        }
+
+        .diary-date {
+            font-size: 0.9em;
+            color: #8a9ea7;
+            margin-bottom: 5px;
+        }
+
+        .diary-title {
+            font-size: 1.1em;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .diary-body {
+            font-size: 0.9em;
+            text-align: left;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333333;
+            font-size: 0.8em;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>百記夜行</h1>
+    </header>
+
+    <div class="content-wrap">
+
+        <!-- 左側：メニューエリア -->
+        <nav>
+            <ul>
+                <li><a href="main.html">MAIN</a></li>
+                <li style="margin-top: 30px;"><a href="index.html">← RETURN</a></li>
+            </ul>
+        </nav>
+
+        <!-- 右側：メインコンテンツ -->
+        <main>
+            <div class="section-title">DIARY</div>
+
+            <!-- ▼ 日記の記事（新しい日付を一番上に追加していきます） ▼ -->
+
+            <article class="diary-entry">
+                <div class="diary-date">2026 / 07 / 27 (月)</div>
+                <div class="diary-title">祝 Webサイト開設</div>
+                <div class="diary-body">
+                   本当に疲れました。ちょうど1ヶ月前にサイトを自作しようとしたのですが、あまりの難しさに断念したという背景があります。ですので、今回開設できましたことに正直かなり興奮しています。<br>
+                    とは言うものの、令和の時代に個人サイトを尋ねに来る人なんているのでしょうか。尋ねられた方はの方で感想でも残してくれたらです。<br>
+                  　ここでは基本的に寝起きと就寝前の一日二回、意味のわからない戯言を吐き捨てる場所にするつもりです。よろしくお願いしますね。
+                </div>
+            </article>
+
+            <!-- ▲ ここまで ▲ -->
+
+        </main>
+
+    </div>
+
+    <footer>
+        <p>&copy; 霧雨巡録社 / 暮葉畏啓 Together with the Drizzle</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
