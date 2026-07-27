@@ -11,21 +11,23 @@
             font-family: "MS P明朝", "MS Mincho", "Hiragino Mincho ProN", serif;
             text-align: center;
             margin: 0;
-            padding: 40px 20px;
+            padding: 50px 0;
             line-height: 1.8;
         }
 
+        /* PCサイトらしい800px固定枠 */
         .container {
-            max-width: 750px;
+            width: 800px;
             margin: 0 auto;
+            text-align: center;
         }
 
-        /* ヘッダー画像の縦幅を抑制する設定 */
+        /* ヘッダー画像のサイズ調整 */
         .header-banner {
-            max-width: 100%;
-            max-height: 250px;
-            object-fit: contain;
-            margin-bottom: 20px;
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            margin-bottom: 30px;
         }
 
         a {
@@ -37,36 +39,21 @@
         }
 
         .enter-link {
-            margin: 30px 0 50px 0;
-            font-size: 1.1em;
-            letter-spacing: 2px;
+            margin: 40px 0 60px 0;
+            font-size: 1.2em;
+            letter-spacing: 3px;
         }
 
         .description {
-            margin: 40px 0;
-            font-size: 0.95em;
-            text-align: center;
+            margin: 50px 0;
+            font-size: 1em;
+            line-height: 2.0;
         }
 
         .notice {
-            margin: 40px 0;
+            margin-top: 60px;
             font-size: 0.85em;
             color: #aaaaaa;
-        }
-
-        .banner-area {
-            margin-top: 50px;
-            font-size: 0.85em;
-            color: #cccccc;
-        }
-
-        .code-box {
-            display: inline-block;
-            font-family: "Courier New", Consolas, monospace;
-            font-size: 0.85em;
-            color: #bbbbbb;
-            margin-top: 5px;
-            word-break: break-all;
         }
     </style>
 </head>
@@ -77,7 +64,7 @@
     <!-- ① トップのヘッダー画像 -->
     <div>
         <a href="main.html">
-            <img src="IMG_2371.jpeg" alt="good morning" class="header-banner" onerror="this.style.display='none'">
+            <img src="IMG_2376.jpeg" alt="good morning" class="header-banner" onerror="this.style.display='none'">
         </a>
     </div>
 
@@ -89,8 +76,8 @@
     <!-- ③ サークルの紹介文・挨拶 -->
     <div class="description">
         <p>
-               霧雨に打たれて大地は歪む。<br>
-            筆者は鬼ごっこが大好きなようです。<br>
+            当サークル「霧雨巡録社」では、短編集を編纂したりノベルゲームを制作したりなサークルです。どうぞ当サークルの奇奇怪怪な事物を世間に見せびらかして、一緒に平地人を戦慄せしめましょう<br>
+            サークル主は暮葉畏啓(くろはいけい)という只の捻くれ者です。お見知り置きを。<br>
             転載はルール違反です、知らなかったでは済みませんよ
         </p>
     </div>
@@ -100,20 +87,6 @@
         <p>
             当世界は、横解像度800以上で見ることを推奨します。<br>
             リンクは貼ることを推奨します。出口のない入り口は通路ではありませんから。
-        </p>
-    </div>
-
-    <!-- ⑤ 相互リンク用のバナー案内 -->
-    <div class="banner-area">
-        <p>
-            バナーは 
-            <img src="IMG_2371.jpeg" alt="サークルバナー" style="vertical-align: middle;" width="200" onerror="this.style.display='none'">
-            <br>
-            <span class="code-box">
-                &lt;img src="https://itsukusimazinnja.github.io/kirisamejunnrokusya/IMG_2371.jpeg" width=200&gt;
-            </span>
-            <br>
-            等とお書き下さい。
         </p>
     </div>
 
