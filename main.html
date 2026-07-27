@@ -12,10 +12,16 @@
             margin: 0;
             padding: 40px 20px;
             line-height: 1.8;
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
         }
 
         .container {
-            width: 800px;
+            max-width: 800px;
+            width: 100%;
             margin: 0 auto;
         }
 
@@ -68,6 +74,7 @@
 
         nav {
             width: 180px;
+            flex-shrink: 0;
             border-right: 1px solid #333333;
             padding-right: 20px;
         }
@@ -93,6 +100,7 @@
 
         main {
             flex: 1;
+            min-width: 0; /* フレックスアイテムの溢れ防止 */
         }
 
         .section-title {
@@ -103,7 +111,7 @@
             color: #ffffff;
         }
 
-        /* 活動履歴（dl/dt/ddの表示崩れを防ぐ設定） */
+        /* 活動履歴 */
         .info-list {
             font-size: 0.9em;
             text-align: left;
@@ -140,6 +148,54 @@
             border-top: 1px solid #333333;
             font-size: 0.8em;
             color: #666666;
+        }
+
+        /* ==========================================
+           スマホ・タブレット向けレスポンシブ設定 (画面幅768px以下)
+           ========================================== */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .content-wrap {
+                flex-direction: column; /* メニューとメインを縦並びに */
+                gap: 20px;
+            }
+
+            nav {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #333333;
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+
+            nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px 15px;
+            }
+
+            nav li {
+                margin-bottom: 0;
+            }
+
+            nav li[style] {
+                margin-top: 0 !important;
+            }
+
+            /* 活動履歴をスマホ用に縦並び化 */
+            .info-list dt {
+                float: none;
+                width: auto;
+                font-weight: bold;
+            }
+
+            .info-list dd {
+                margin-left: 0;
+                margin-bottom: 12px;
+            }
         }
     </style>
 </head>
