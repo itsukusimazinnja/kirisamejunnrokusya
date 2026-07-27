@@ -13,7 +13,7 @@
     <!-- キーワード -->
     <meta name="keywords" content="霧雨巡録社,暮葉畏啓,黒羽録,百記夜行,小説,黒背景クローバーs,暮葉,東方project,怪異">
     
-    <style>
+<style>
         body {
             background-color: #000000;
             color: #dcdcdc;
@@ -22,8 +22,25 @@
             margin: 0;
             padding: 50px 0;
             line-height: 1.8;
+            position: relative; /* ←【追加1】これを入れることで右上の位置が固定されます */
         }
 
+        /* ↓【追加2】右上に置くためのデザイン（スタイル） */
+        .top-counter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 0.75em;
+            color: #aaaaaa;
+            text-align: right;
+            letter-spacing: 1px;
+        }
+
+        .top-counter img {
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+    
         /* PCサイトらしい800px固定枠 */
         .container {
             width: 800px;
@@ -67,6 +84,13 @@
     </style>
 </head>
 <body>
+
+
+<!-- ▼【追加3】ここにお持ちのカウンター用imgタグを入れます -->
+<div class="top-counter">
+    VISITOR : <img src="http://www5.kannet.ne.jp/~counter/count.cgi?name=***&type=**&width=*">
+</div>
+
 
 <div class="container">
 
