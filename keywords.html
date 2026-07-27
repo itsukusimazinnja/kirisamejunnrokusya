@@ -94,15 +94,23 @@
             color: #ffffff;
         }
 
-        /* カテゴリ目次ナビ */
+        /* 作品別目次ナビ */
         .category-nav {
             display: flex;
-            gap: 15px;
+            flex-wrap: wrap;
+            gap: 10px 15px;
             margin-bottom: 30px;
-            padding: 10px 15px;
+            padding: 12px 15px;
             background-color: #080808;
             border: 1px solid #222222;
-            font-size: 0.9em;
+            font-size: 0.85em;
+            line-height: 1.6;
+        }
+
+        .category-nav .nav-label {
+            color: #888888;
+            width: 100%;
+            margin-bottom: 2px;
         }
 
         .category-nav a {
@@ -115,13 +123,13 @@
             text-decoration: underline;
         }
 
-        /* 大カテゴリ見出し */
+        /* 大カテゴリ（作品名）見出し */
         .category-header {
             font-size: 1.1em;
             color: #8a9ea7;
             border-bottom: 1px solid #444444;
             padding-bottom: 5px;
-            margin-top: 40px;
+            margin-top: 45px;
             margin-bottom: 25px;
             letter-spacing: 2px;
         }
@@ -205,7 +213,6 @@
         <!-- 左側：メニューエリア -->
         <nav>
             <ul>
-                
                 <li style="margin-top: 30px;"><a href="main.html">← 去る</a></li>
             </ul>
         </nav>
@@ -214,19 +221,21 @@
         <main>
             <div class="section-title">用語集</div>
 
-            <!-- 目次ショートカット -->
+            <!-- 作品別目次ショートカット -->
             <div class="category-nav">
-                <span>[ 目次 ]</span>
-                <a href="#cat-character">◆ 人物ー</a>
-                <a href="#cat-world">◆ 世界</a>
-                <a href="#cat-concept">◆ その他</a>
+                <div class="nav-label">[ 作品別目次 ]</div>
+                <a href="#work-atmosphere">◆ アトモスフェア</a>
+                <a href="#work-innutsu">◆ 陰鬱な世界を謳歌する</a>
+                <a href="#work-sankai">◆ 散開開花</a>
+                <a href="#work-hensachi">◆ 偏差値71の妖怪怪異譚</a>
+                <a href="#work-question">◆ ？</a>
             </div>
 
 
             <!-- ==========================================
-                 1. キャラクター
+                 1. アトモスフェア
                  ========================================== -->
-            <h2 id="cat-character" class="category-header">【 人物 】</h2>
+            <h2 id="work-atmosphere" class="category-header">【 アトモスフェア 】</h2>
 
             <div class="keyword-item">
                 <div class="keyword-name">【能登まさし（のとまさし）】</div>
@@ -235,10 +244,18 @@
                 </div>
             </div>
 
+            <!-- ここに「アトモスフェア」関連のキャラクター・用語を追加 -->
+
+
+            <!-- ==========================================
+                 2. 陰鬱な世界を謳歌する
+                 ========================================== -->
+            <h2 id="work-innutsu" class="category-header">【 陰鬱な世界を謳歌する 】</h2>
+
             <div class="keyword-item">
                 <div class="keyword-name">【凪航平（なぎこうへい）】</div>
                 <div class="keyword-desc">
-                 伝承に魅入られた不憫な少年。幼馴染の麗花とも上手く馴染めず家庭は崩壊している。ちなみに寝つきが悪い。
+                    伝承に魅入られた不憫な少年。幼馴染の麗花とも上手く馴染めず家庭は崩壊している。ちなみに寝つきが悪い。
                 </div>
             </div>
 
@@ -270,7 +287,27 @@
                 </div>
             </div>
 
-            
+            <div class="keyword-item">
+                <div class="keyword-name">ユーフィニティ</div>
+                <div class="keyword-desc">
+                    雄介が発見した旅行ができる怪鬼道具。
+                </div>
+            </div>
+
+            <div class="keyword-item">
+                <div class="keyword-name">怪異譚？ A.陰鬱な花が開いたのです</div>
+                <div class="keyword-desc">
+                    黒羽録の正史の二つ名だそうだ。おどろおどろしい世界観に反し，二つ名自体ははっちゃけている。
+                </div>
+            </div>
+
+            <!-- ここに「陰鬱な世界を謳歌する」関連の用語を追加 -->
+
+
+            <!-- ==========================================
+                 3. 散開開花
+                 ========================================== -->
+            <h2 id="work-sankai" class="category-header">【 散開開花 】</h2>
 
             <div class="keyword-item">
                 <div class="keyword-name">【黒羽（くろは）】</div>
@@ -278,6 +315,36 @@
                     誰かだけが知っている名前。塵の子でも砂の子でもない奴だという旨の内容を誰かが言っていたのを聞いたことがある。
                 </div>
             </div>
+
+            <div class="keyword-item">
+                <div class="keyword-name">黒羽録（こくうろく）</div>
+                <div class="keyword-desc">
+                    暮葉畏啓の手掛ける一連の作品群の総称。独自の都市伝説、妖怪怪異、世界観が展開される。
+                </div>
+            </div>
+
+            <div class="keyword-item">
+                <div class="keyword-name">祝詞言葉</div>
+                <div class="keyword-desc">
+                    どこかの国の祝詞言葉。これを唱えると，悪鬼は興奮し，亡霊は成仏するそうだ。そうだ，全文を載せよう。<br>
+                    <span style="color: #aaaaaa; display: block; margin-top: 5px; padding-left: 10px; border-left: 2px solid #333333;">
+                        傾げても畏め 黒羽の大神<br>
+                        世の空の下に消える世の歪み<br>
+                        禊ぎ祓へ給いし時に 成りませる単一の魂<br>
+                        諸々の禍事、罰、穢れ あらむをば<br>
+                        求め追い抜き貫き給へと 申すことを求めんと<br>
+                        畏み畏み申す
+                    </span>
+                </div>
+            </div>
+
+            <!-- ここに「散開開花」関連の用語を追加 -->
+
+
+            <!-- ==========================================
+                 4. 偏差値71の妖怪怪異譚
+                 ========================================== -->
+            <h2 id="work-hensachi" class="category-header">【 偏差値71の妖怪怪異譚 】</h2>
 
             <div class="keyword-item">
                 <div class="keyword-name">酒呑童子</div>
@@ -300,6 +367,14 @@
                 </div>
             </div>
 
+            <!-- ここに「偏差値71の妖怪怪異譚」関連の用語を追加 -->
+
+
+            <!-- ==========================================
+                 5. ？
+                 ========================================== -->
+            <h2 id="work-question" class="category-header">【 ？ 】</h2>
+
             <div class="keyword-item">
                 <div class="keyword-name">終焉帝</div>
                 <div class="keyword-desc">
@@ -314,57 +389,7 @@
                 </div>
             </div>
 
-
-            <!-- ==========================================
-                 2. 世界
-                 ========================================== -->
-            <h2 id="cat-world" class="category-header">【 世界 】</h2>
-
-            <div class="keyword-item">
-                <div class="keyword-name">黒羽録（こくうろく）</div>
-                <div class="keyword-desc">
-                    暮葉畏啓の手掛ける一連の作品群の総称。独自の都市伝説、妖怪怪異、世界観が展開される。
-                </div>
-            </div>
-
-            <div class="keyword-item">
-                <div class="keyword-name">怪異譚？ A.陰鬱な花が開いたのです</div>
-                <div class="keyword-desc">
-                    黒羽録の正史の二つ名だそうだ。おどろおどろしい世界観に反し，二つ名自体ははっちゃけている。
-                </div>
-            </div>
-
-            <!-- ここに「〇〇の里」や「月浪国家」などの地名・世界設定を追加可能 -->
-
-
-            <!-- ==========================================
-                 3. 概念・道具・その他
-                 ========================================== -->
-            <h2 id="cat-concept" class="category-header">【 概念・道具・その他 】</h2>
-
-            <div class="keyword-item">
-                <div class="keyword-name">祝詞言葉</div>
-                <div class="keyword-desc">
-                    どこかの国の祝詞言葉。これを唱えると，悪鬼は興奮し，亡霊は成仏するそうだ。そうだ，全文を載せよう。<br>
-                    <span style="color: #aaaaaa; display: block; margin-top: 5px; padding-left: 10px; border-left: 2px solid #333333;">
-                        傾げても畏め 黒羽の大神<br>
-                        世の空の下に消える世の歪み<br>
-                        禊ぎ祓へ給いし時に 成りませる単一の魂<br>
-                        諸々の禍事、罰、穢れ あらむをば<br>
-                        求め追い抜き貫き給へと 申すことを求めんと<br>
-                        畏み畏み申す
-                    </span>
-                </div>
-            </div>
-
-            <div class="keyword-item">
-                <div class="keyword-name">ユーフィニティ</div>
-                <div class="keyword-desc">
-                    雄介が発見した旅行ができる怪鬼道具。
-                </div>
-            </div>
-
-            <!-- ここに術式、道具、組織、用語などを追加可能 -->
+            <!-- ここに「？」関連の未定義設定や隠し要素的な用語を追加 -->
 
         </main>
 
