@@ -18,18 +18,37 @@
             margin: 0 auto;
         }
 
+        
+        /* 雲と雨の画像を活かすヘッダー設定 */
         header {
             text-align: center;
             border-bottom: 1px solid #333333;
-            padding-bottom: 20px;
+            padding: 60px 20px 40px;
             margin-bottom: 30px;
+            
+            /* 
+              1つ目のグラデーション：右上が切れている部分を黒く自然にフェードアウト
+              2つ目のグラデーション：文字の視認性を保ちつつ下部へ馴染ませる黒フィルム
+              3つ目：アップロード画像（IMG_2389.jpeg）
+            */
+            background-image: 
+                linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 40%),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%),
+                url('IMG_2389.jpeg');
+                
+            background-size: cover;
+            background-position: center top; /* 雲の位置を上部に合わせる */
+            position: relative;
         }
 
         header h1 {
-            font-size: 1.6em;
+            font-size: 1.8em;
             font-weight: normal;
-            letter-spacing: 4px;
+            letter-spacing: 6px;
             margin: 0;
+            color: #ffffff;
+            /* 雲の色の邪魔にならないよう黒い影でくっきり立たせる */
+            text-shadow: 0 0 15px rgba(0, 0, 0, 1), 2px 2px 4px rgba(0, 0, 0, 1);
         }
 
         .content-wrap {
