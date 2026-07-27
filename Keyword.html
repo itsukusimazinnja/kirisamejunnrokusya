@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用語集</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #dcdcdc;
+            font-family: "MS P明朝", "MS Mincho", "Hiragino Mincho ProN", serif;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.8;
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* ヘッダー設定 */
+        header {
+            text-align: center;
+            border-bottom: 1px solid #333333;
+            padding: 60px 20px 40px;
+            margin-bottom: 30px;
+            background-image: 
+                linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 40%),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%),
+                url('IMG_2389.jpeg');
+            background-size: cover;
+            background-position: center top;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            font-weight: normal;
+            letter-spacing: 6px;
+            margin: 0;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 1), 2px 2px 4px rgba(0, 0, 0, 1);
+        }
+
+        /* レイアウト */
+        .content-wrap {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav {
+            width: 180px;
+            flex-shrink: 0;
+            border-right: 1px solid #333333;
+            padding-right: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #8a9ea7;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+
+        main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .section-title {
+            font-size: 1.1em;
+            border-left: 3px solid #8a9ea7;
+            padding-left: 10px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        /* 用語集スタイリング */
+        .keyword-item {
+            margin-bottom: 30px;
+            text-align: left;
+            border-bottom: 1px dashed #222222;
+            padding-bottom: 20px;
+        }
+
+        .keyword-name {
+            font-size: 1.1em;
+            color: #8a9ea7;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .keyword-desc {
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333333;
+            font-size: 0.8em;
+            color: #666666;
+        }
+
+        /* レスポンシブ設定 (画面幅768px以下) */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .content-wrap {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #333333;
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+
+            nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px 15px;
+            }
+
+            nav li {
+                margin-bottom: 0;
+            }
+
+            nav li[style] {
+                margin-top: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ヘッダー -->
+    <header>
+        <h1>霧雨巡録社</h1>
+    </header>
+
+    <!-- メインレイアウト -->
+    <div class="content-wrap">
+
+        <!-- 左側：メニューエリア -->
+        <nav>
+            <ul>
+                <li><a href="main.html#about">紹介</a></li>
+                <li><a href="main.html#works">黒羽録</a></li>
+                <li><a href="main.html#info">活動履歴</a></li>
+                <li><a href="keywords.html">用語集</a></li>
+                <li><a href="diary.html">日記</a></li>
+                <li><a href="main.html#link">転生先</a></li>
+                <li><a href="https://www1.rocketbbs.com/110/kuroha07.html" target="_blank">掲示板</a></li>
+                <li style="margin-top: 30px;"><a href="main.html">← 去る</a></li>
+            </ul>
+        </nav>
+
+        <!-- 右側：用語集コンテンツ -->
+        <main>
+            <div class="section-title">用語集</div>
+
+            <!-- 用語サンプル1 -->
+            <div class="keyword-item">
+                <div class="keyword-name">【黒羽録（こくうろく）】</div>
+                <div class="keyword-desc">
+                    暮葉畏啓の手掛ける一連の作品群の総称。独自の都市伝説、妖怪怪異、世界観が展開される。
+                </div>
+            </div>
+
+            <!-- 用語サンプル2 -->
+            <div class="keyword-item">
+                <div class="keyword-name">【能登まさし】</div>
+                <div class="keyword-desc">
+                    記憶を失っているはずなのに，そこが幻想世界だと気づく頭のおかしな少年。シリーズ全体の中でも稀有なほどに捻くれている。
+                </div>
+            </div>
+
+
+            <!-- 用語サンプル3 -->
+            <div class="keyword-item">
+                <div class="keyword-name">【怪異譚？　A.陰鬱な花が開いたのです】</div>
+                <div class="keyword-desc">
+                    黒羽録の正史の二つ名だそうだ。おどろおどろしい世界観に反し，二つ名自体ははっちゃけている。
+                </div>
+            </div>
+
+<!-- 用語サンプル4 -->
+            <div class="keyword-item">
+                <div class="keyword-name">【祝詞言葉】</div>
+                <div class="keyword-desc">
+                    どこかの国の祝詞言葉。これを唱えると，悪鬼は興奮し，亡霊は成仏するそうだ。そうだ，全文を載せよう。
+傾げても畏め　黒羽の大神　世の空の下に消える世の歪み　禊ぎ祓へ給いし時に　成りませる単一の魂　諸々の禍事、罰、穢れ　あらむをば　求め追い抜き貫き給へと　申すことを求めんと　畏み畏み申す
+                </div>
+            </div>
+
+
+<!-- 用語サンプル5 -->
+            <div class="keyword-item">
+                <div class="keyword-name">【雄介】</div>
+                <div class="keyword-desc">
+                    旅行ができる怪鬼道具『ユーフィニティ』の発見者。謎は多く，それと同時に髭も多い。ちなみに蛾にすかれる体質を持っているらしい。
+                </div>
+            </div>
+
+<!-- 用語サンプル5 -->
+            <div class="keyword-item">
+                <div class="keyword-name">【黒羽】</div>
+                <div class="keyword-desc">
+                    誰かだけが知っている名前。塵の子でも砂の子でもない奴だという旨の内容を誰かが言っていたのを聞いたことがある。
+                </div>
+            </div>
+
+<!-- 用語サンプル6 -->
+            <div class="keyword-item">
+                <div class="keyword-name">【酒呑童子】</div>
+                <div class="keyword-desc">
+                    元々は大江山に住み着いている鬼だったが，最近は黄泉の国にいるらしい。性格は頑固で豪傑。腕っぷしだけなら無敗の鬼王。（井の中の蛙，大海を知らず）
+                </div>
+            </div>
+
+<!-- 用語サンプル7 -->
+            <div class="keyword-item">
+                <div class="keyword-name">【荊芥爺】</div>
+                <div class="keyword-desc">
+                  鬼の里の長老者。最近は物忘れがひどいようで，数百年前の朝に何を食べたかさえ忘れてしまったそうだ。鬼なんて屍人しか食べないだろうに。
+                </div>
+            </div>
+
+<!-- 用語サンプル8 -->
+            <div class="keyword-item">
+                <div class="keyword-name">【猫又】</div>
+                <div class="keyword-desc">
+                    尾が三本に分かれた猫ちゃんだけど，性格は荒く，人を見つけると後ろからこっそり忍び寄って食い殺す。三千歳超えの老いぼれ。
+                </div>
+            </div>
+
+<!-- 用語サンプル9 -->
+            <div class="keyword-item">
+                <div class="keyword-name">【終焉帝】</div>
+                <div class="keyword-desc">
+                    ただの荒野にわざわざ国家を建てたお馬鹿さん。ちなみにその場所は月面らしい。また，月浪国家の国王マーナガルムの実の父でもあるようだ。親子揃って体毛が白い。
+                </div>
+            </div>
+
+<!-- 用語サンプル10 -->
+            <div class="keyword-item">
+                <div class="keyword-name">【七人の雲】</div>
+                <div class="keyword-desc">
+                    悪霊跋扈の時代に空を総べていた７人の偉大な神格。しかし最近はそうでもないと言う。代名詞は陰の豪雷。
+                </div>
+            </div>
+
+
+
+
+            <!-- ここに新しい用語を追加していくことができます -->
+
+        </main>
+
+    </div>
+
+    <footer>
+        <p>&copy; 霧雨巡録社 / 暮葉畏啓 Together with the Drizzle</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
