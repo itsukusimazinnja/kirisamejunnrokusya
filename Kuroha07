@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>キリサメジュウンロクシア</title>
+    <style>
+        /* 全体設定：漆黒背景・白/明朝体テキスト */
+        body {
+            background-color: #000000;
+            color: #dcdcdc;
+            font-family: "MS P明朝", "MS Mincho", "Hiragino Mincho ProN", serif;
+            text-align: center;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* ヘッダー画像・ロゴ */
+        .header-banner {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* リンク（レトロサイト風の青系または紫系アンダーライン） */
+        a {
+            color: #8a9ea7;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #ffffff;
+        }
+
+        /* 入口（よおこそ）リンク部分 */
+        .enter-link {
+            margin: 30px 0 50px 0;
+            font-size: 1.1em;
+            letter-spacing: 2px;
+        }
+
+        /* サークル説明文ブロック */
+        .description {
+            margin: 40px 0;
+            font-size: 0.95em;
+            text-align: center;
+        }
+
+        /* 推奨環境などの注意書き（小さめの文字） */
+        .notice {
+            margin: 40px 0;
+            font-size: 0.85em;
+            color: #aaaaaa;
+        }
+
+        /* バナー設置エリア */
+        .banner-area {
+            margin-top: 50px;
+            font-size: 0.85em;
+            color: #cccccc;
+        }
+
+        /* HTMLソース直書き風のコード枠 */
+        .code-box {
+            display: inline-block;
+            font-family: "Courier New", Consolas, monospace;
+            font-size: 0.85em;
+            color: #bbbbbb;
+            margin-top: 5px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. ヘッダー画像（サークル名ロゴなどを配置） -->
+    <!-- 画像を用意するまではテキストのみでも機能します -->
+    <div>
+        <a href="main.html">
+            <img src="header_logo.png" alt="キリサメジュウンロクシア" class="header-banner" onerror="this.style.display='none'">
+        </a>
+    </div>
+
+    <!-- 2. 入口リンク -->
+    <div class="enter-link">
+        <a href="main.html">よおこそ</a>
+    </div>
+
+    <!-- 3. サークル紹介文 -->
+    <div class="description">
+        <p>
+            当サークル「イツクシマシンジャ」では、小説を執筆したり作品を発表したりしているサークルです。<br>
+            入場したい場合、上の画像をクリックしてください。<br>
+            リンクを張る場合は必ずこの https://[ユーザー名].github.io/キリサメジュウンロクシア/ にお願ひします。
+        </p>
+    </div>
+
+    <!-- 4. 閲覧環境等の注意書き -->
+    <div class="notice">
+        <p>
+            当ページは、横解像度800以上で見ることを想定しています。<br>
+            リンクはご自由にお願いいたします。
+        </p>
+    </div>
+
+    <!-- 5. 相互リンク用バナー案内 -->
+    <div class="banner-area">
+        <p>
+            バナーは 
+            <img src="banner.gif" alt="サークルバナー" style="vertical-align: middle;" onerror="this.style.display='none'">
+            <br>
+            <span class="code-box">
+                &lt;img src="https://[ユーザー名].github.io/キリサメジュウンロクシア/banner.gif" width=200 height=40&gt;
+            </span>
+            <br>
+            とかお書き下さい。
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
