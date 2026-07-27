@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>霧雨巡録社 - MAIN</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #dcdcdc;
+            font-family: "MS P明朝", "MS Mincho", "Hiragino Mincho ProN", serif;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.8;
+        }
+
+        .container {
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        /* サイトの簡易ヘッダー */
+        header {
+            text-align: center;
+            border-bottom: 1px solid #333333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 1.6em;
+            font-weight: normal;
+            letter-spacing: 4px;
+            margin: 0;
+        }
+
+        /* 2カラムレイアウト設定 */
+        .content-wrap {
+            display: flex;
+            gap: 30px;
+        }
+
+        /* 左側：メニューエリア */
+        nav {
+            width: 180px;
+            border-right: 1px solid #333333;
+            padding-right: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #8a9ea7;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+
+        /* 右側：メインコンテンツエリア */
+        main {
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 1.1em;
+            border-left: 3px solid #8a9ea7;
+            padding-left: 10px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .update-box {
+            background-color: #0a0a0a;
+            border: 1px solid #222222;
+            padding: 15px;
+            height: 150px;
+            overflow-y: scroll;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .update-box dt {
+            color: #8a9ea7;
+            float: left;
+            width: 90px;
+            clear: left;
+        }
+
+        .update-box dd {
+            margin-left: 95px;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333333;
+            font-size: 0.8em;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>霧雨巡録社</h1>
+    </header>
+
+    <div class="content-wrap">
+
+        <!-- 左側：ナビゲーションメニュー -->
+        <nav>
+            <ul>
+                <li><a href="main.html">TOP / NEWS</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#works">WORKS</a></li>
+                <li><a href="#link">LINK</a></li>
+                <li style="margin-top: 30px;"><a href="index.html">← RETURN</a></li>
+            </ul>
+        </nav>
+
+        <!-- 右側：メイン領域 -->
+        <main>
+            
+            <!-- 更新履歴 -->
+            <section>
+                <div class="section-title">INFORMATION</div>
+                <div class="update-box">
+                    <dl>
+                        <dt>2026/07/27</dt>
+                        <dd>Webサイト公開。試運転開始。</dd>
+                    </dl>
+                </div>
+            </section>
+
+            <!-- 挨拶・ABOUT枠 -->
+            <section id="about" style="margin-bottom: 40px;">
+                <div class="section-title">ABOUT</div>
+                <p style="font-size: 0.9em; text-align: left;">
+                    サークル「霧雨巡録社」のWeb拠点です。<br>
+                    文章作品（短編集）の編纂や、ノベルゲーム等の制作物を公開・案内していきます。
+                </p>
+            </section>
+
+            <!-- 作品一覧枠 -->
+            <section id="works">
+                <div class="section-title">WORKS</div>
+                <p style="font-size: 0.9em; text-align: left;">
+                    準備中...
+                </p>
+            </section>
+
+        </main>
+
+    </div>
+
+    <footer>
+        <p>&copy; 霧雨巡録社 / 暮葉畏啓 All Rights Reserved.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
