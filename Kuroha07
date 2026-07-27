@@ -2,9 +2,11 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <!-- ブラウザのタブに表示されるサイト名 -->
     <title>キリサメジュウンロクシア</title>
+    
+    <!-- デザインの設定（ここはいじらなくてOKです） -->
     <style>
-        /* 全体設定：漆黒背景・白/明朝体テキスト */
         body {
             background-color: #000000;
             color: #dcdcdc;
@@ -20,14 +22,12 @@
             margin: 0 auto;
         }
 
-        /* ヘッダー画像・ロゴ */
         .header-banner {
             max-width: 100%;
             height: auto;
             margin-bottom: 20px;
         }
 
-        /* リンク（レトロサイト風の青系または紫系アンダーライン） */
         a {
             color: #8a9ea7;
             text-decoration: underline;
@@ -36,35 +36,30 @@
             color: #ffffff;
         }
 
-        /* 入口（よおこそ）リンク部分 */
         .enter-link {
             margin: 30px 0 50px 0;
             font-size: 1.1em;
             letter-spacing: 2px;
         }
 
-        /* サークル説明文ブロック */
         .description {
             margin: 40px 0;
             font-size: 0.95em;
             text-align: center;
         }
 
-        /* 推奨環境などの注意書き（小さめの文字） */
         .notice {
             margin: 40px 0;
             font-size: 0.85em;
             color: #aaaaaa;
         }
 
-        /* バナー設置エリア */
         .banner-area {
             margin-top: 50px;
             font-size: 0.85em;
             color: #cccccc;
         }
 
-        /* HTMLソース直書き風のコード枠 */
         .code-box {
             display: inline-block;
             font-family: "Courier New", Consolas, monospace;
@@ -79,47 +74,46 @@
 
 <div class="container">
 
-    <!-- 1. ヘッダー画像（サークル名ロゴなどを配置） -->
-    <!-- 画像を用意するまではテキストのみでも機能します -->
+    <!-- ① トップのヘッダー画像（画像がない時は自動で隠れます） -->
     <div>
         <a href="main.html">
-            <img src="header_logo.png" alt="キリサメジュウンロクシア" class="header-banner" onerror="this.style.display='none'">
+            <img src="header_logo.png" alt="★ここにヘッダー画像のタイトル★" class="header-banner" onerror="this.style.display='none'">
         </a>
     </div>
 
-    <!-- 2. 入口リンク -->
+    <!-- ② 本編への入口リンク -->
     <div class="enter-link">
-        <a href="main.html">よおこそ</a>
+        <a href="main.html">★ここにメインページへのリンク文字（例：よおこそ / ENTER）★</a>
     </div>
 
-    <!-- 3. サークル紹介文 -->
+    <!-- ③ サークルの紹介文・挨拶 -->
     <div class="description">
         <p>
-            当サークル「イツクシマシンジャ」では、小説を執筆したり作品を発表したりしているサークルです。<br>
-            入場したい場合、上の画像をクリックしてください。<br>
-            リンクを張る場合は必ずこの https://[ユーザー名].github.io/キリサメジュウンロクシア/ にお願ひします。
+            ★ここにサークルの紹介文1行目★<br>
+            ★ここにサークルの紹介文2行目★<br>
+            ★ここにリンク・転載に関する注意など★
         </p>
     </div>
 
-    <!-- 4. 閲覧環境等の注意書き -->
+    <!-- ④ 閲覧環境などの注意書き -->
     <div class="notice">
         <p>
-            当ページは、横解像度800以上で見ることを想定しています。<br>
-            リンクはご自由にお願いいたします。
+            ★ここに動作環境・推奨解像度など（例：当ページは、横解像度800以上で見ることを想定しています。）★<br>
+            ★ここにリンクに関する方針（例：リンクはご自由にお願いいたします。）★
         </p>
     </div>
 
-    <!-- 5. 相互リンク用バナー案内 -->
+    <!-- ⑤ 相互リンク用のバナー案内 -->
     <div class="banner-area">
         <p>
             バナーは 
             <img src="banner.gif" alt="サークルバナー" style="vertical-align: middle;" onerror="this.style.display='none'">
             <br>
             <span class="code-box">
-                &lt;img src="https://[ユーザー名].github.io/キリサメジュウンロクシア/banner.gif" width=200 height=40&gt;
+                &lt;img src="★ここに自分のサイトのバナー画像URL★" width=200 height=40&gt;
             </span>
             <br>
-            とかお書き下さい。
+            ★ここにバナー貼り付けに関する指示（例：とかお書き下さい。）★
         </p>
     </div>
 
