@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>用語集</title>
+    <title>用語集 - 霧雨巡録社</title>
     <style>
         body {
             background-color: #000000;
@@ -87,24 +87,56 @@
         }
 
         .section-title {
-            font-size: 1.1em;
+            font-size: 1.2em;
             border-left: 3px solid #8a9ea7;
             padding-left: 10px;
             margin-bottom: 20px;
             color: #ffffff;
         }
 
+        /* カテゴリ目次ナビ */
+        .category-nav {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 10px 15px;
+            background-color: #080808;
+            border: 1px solid #222222;
+            font-size: 0.9em;
+        }
+
+        .category-nav a {
+            color: #dcdcdc;
+            text-decoration: none;
+        }
+
+        .category-nav a:hover {
+            color: #8a9ea7;
+            text-decoration: underline;
+        }
+
+        /* 大カテゴリ見出し */
+        .category-header {
+            font-size: 1.1em;
+            color: #8a9ea7;
+            border-bottom: 1px solid #444444;
+            padding-bottom: 5px;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
         /* 用語集スタイリング */
         .keyword-item {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-align: left;
             border-bottom: 1px dashed #222222;
-            padding-bottom: 20px;
+            padding-bottom: 15px;
         }
 
         .keyword-name {
-            font-size: 1.1em;
-            color: #8a9ea7;
+            font-size: 1.05em;
+            color: #ffffff;
             font-weight: bold;
             margin-bottom: 5px;
         }
@@ -188,104 +220,127 @@
         <main>
             <div class="section-title">用語集</div>
 
-            <!-- 用語サンプル1 -->
-            <div class="keyword-item">
-                <div class="keyword-name">【黒羽録（こくうろく）】</div>
-                <div class="keyword-desc">
-                    暮葉畏啓の手掛ける一連の作品群の総称。独自の都市伝説、妖怪怪異、世界観が展開される。
-                </div>
+            <!-- 目次ショートカット -->
+            <div class="category-nav">
+                <span>[ 目次 ]</span>
+                <a href="#cat-character">◆ キャラクター</a>
+                <a href="#cat-world">◆ 世界</a>
+                <a href="#cat-concept">◆ 概念・その他</a>
             </div>
 
-            <!-- 用語サンプル2 -->
+
+            <!-- ==========================================
+                 1. キャラクター
+                 ========================================== -->
+            <h2 id="cat-character" class="category-header">【 キャラクター 】</h2>
+
             <div class="keyword-item">
-                <div class="keyword-name">【能登まさし】</div>
+                <div class="keyword-name">能登まさし</div>
                 <div class="keyword-desc">
                     記憶を失っているはずなのに，そこが幻想世界だと気づく頭のおかしな少年。シリーズ全体の中でも稀有なほどに捻くれている。
                 </div>
             </div>
 
-
-            <!-- 用語サンプル3 -->
             <div class="keyword-item">
-                <div class="keyword-name">【怪異譚？　A.陰鬱な花が開いたのです】</div>
-                <div class="keyword-desc">
-                    黒羽録の正史の二つ名だそうだ。おどろおどろしい世界観に反し，二つ名自体ははっちゃけている。
-                </div>
-            </div>
-
-<!-- 用語サンプル4 -->
-            <div class="keyword-item">
-                <div class="keyword-name">【祝詞言葉】</div>
-                <div class="keyword-desc">
-                   傾げても畏め 黒羽の大神<br>
-                        世の空の下に消える世の歪み<br>
-                        禊ぎ祓へ給いし時に 成りませる単一の魂<br>
-                        諸々の禍事、罰、穢れ あらむをば<br>
-                        求め追い抜き貫き給へと 申すことを求めんと<br>
-                        畏み畏み申す
-            </div>
-
-
-<!-- 用語サンプル5 -->
-            <div class="keyword-item">
-                <div class="keyword-name">【雄介】</div>
+                <div class="keyword-name">雄介</div>
                 <div class="keyword-desc">
                     旅行ができる怪鬼道具『ユーフィニティ』の発見者。謎は多く，それと同時に髭も多い。ちなみに蛾にすかれる体質を持っているらしい。
                 </div>
             </div>
 
-<!-- 用語サンプル5 -->
             <div class="keyword-item">
-                <div class="keyword-name">【黒羽】</div>
+                <div class="keyword-name">黒羽</div>
                 <div class="keyword-desc">
                     誰かだけが知っている名前。塵の子でも砂の子でもない奴だという旨の内容を誰かが言っていたのを聞いたことがある。
                 </div>
             </div>
 
-<!-- 用語サンプル6 -->
             <div class="keyword-item">
-                <div class="keyword-name">【酒呑童子】</div>
+                <div class="keyword-name">酒呑童子</div>
                 <div class="keyword-desc">
                     元々は大江山に住み着いている鬼だったが，最近は黄泉の国にいるらしい。性格は頑固で豪傑。腕っぷしだけなら無敗の鬼王。（井の中の蛙，大海を知らず）
                 </div>
             </div>
 
-<!-- 用語サンプル7 -->
             <div class="keyword-item">
-                <div class="keyword-name">【荊芥爺】</div>
+                <div class="keyword-name">荊芥爺</div>
                 <div class="keyword-desc">
-                  鬼の里の長老者。最近は物忘れがひどいようで，数百年前の朝に何を食べたかさえ忘れてしまったそうだ。鬼なんて屍人しか食べないだろうに。
+                    鬼の里の長老者。最近は物忘れがひどいようで，数百年前の朝に何を食べたかさえ忘れてしまったそうだ。鬼なんて屍人しか食べないだろうに。
                 </div>
             </div>
 
-<!-- 用語サンプル8 -->
             <div class="keyword-item">
-                <div class="keyword-name">【猫又】</div>
+                <div class="keyword-name">猫又</div>
                 <div class="keyword-desc">
                     尾が三本に分かれた猫ちゃんだけど，性格は荒く，人を見つけると後ろからこっそり忍び寄って食い殺す。三千歳超えの老いぼれ。
                 </div>
             </div>
 
-<!-- 用語サンプル9 -->
             <div class="keyword-item">
-                <div class="keyword-name">【終焉帝】</div>
+                <div class="keyword-name">終焉帝</div>
                 <div class="keyword-desc">
                     ただの荒野にわざわざ国家を建てたお馬鹿さん。ちなみにその場所は月面らしい。また，月浪国家の国王マーナガルムの実の父でもあるようだ。親子揃って体毛が白い。
                 </div>
             </div>
 
-<!-- 用語サンプル10 -->
             <div class="keyword-item">
-                <div class="keyword-name">【七人の雲】</div>
+                <div class="keyword-name">七人の雲</div>
                 <div class="keyword-desc">
                     悪霊跋扈の時代に空を総べていた７人の偉大な神格。しかし最近はそうでもないと言う。代名詞は陰の豪雷。
                 </div>
             </div>
 
 
+            <!-- ==========================================
+                 2. 世界
+                 ========================================== -->
+            <h2 id="cat-world" class="category-header">【 世界 】</h2>
+
+            <div class="keyword-item">
+                <div class="keyword-name">黒羽録（こくうろく）</div>
+                <div class="keyword-desc">
+                    暮葉畏啓の手掛ける一連の作品群の総称。独自の都市伝説、妖怪怪異、世界観が展開される。
+                </div>
+            </div>
+
+            <div class="keyword-item">
+                <div class="keyword-name">怪異譚？ A.陰鬱な花が開いたのです</div>
+                <div class="keyword-desc">
+                    黒羽録の正史の二つ名だそうだ。おどろおどろしい世界観に反し，二つ名自体ははっちゃけている。
+                </div>
+            </div>
+
+            <!-- ここに「〇〇の里」や「月浪国家」などの地名・世界設定を追加可能 -->
 
 
-            <!-- ここに新しい用語を追加していくことができます -->
+            <!-- ==========================================
+                 3. 概念・道具・その他
+                 ========================================== -->
+            <h2 id="cat-concept" class="category-header">【 概念・道具・その他 】</h2>
+
+            <div class="keyword-item">
+                <div class="keyword-name">祝詞言葉</div>
+                <div class="keyword-desc">
+                    どこかの国の祝詞言葉。これを唱えると，悪鬼は興奮し，亡霊は成仏するそうだ。そうだ，全文を載せよう。<br>
+                    <span style="color: #aaaaaa; display: block; margin-top: 5px; padding-left: 10px; border-left: 2px solid #333333;">
+                        傾げても畏め 黒羽の大神<br>
+                        世の空の下に消える世の歪み<br>
+                        禊ぎ祓へ給いし時に 成りませる単一の魂<br>
+                        諸々の禍事、罰、穢れ あらむをば<br>
+                        求め追い抜き貫き給へと 申すことを求めんと<br>
+                        畏み畏み申す
+                    </span>
+                </div>
+            </div>
+
+            <div class="keyword-item">
+                <div class="keyword-name">ユーフィニティ</div>
+                <div class="keyword-desc">
+                    雄介が発見した旅行ができる怪鬼道具。
+                </div>
+            </div>
+
+            <!-- ここに術式、道具、組織、用語などを追加可能 -->
 
         </main>
 
