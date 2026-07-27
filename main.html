@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>霧雨巡録社 - MAIN</title>
     <style>
         body {
@@ -14,11 +15,11 @@
         }
 
         .container {
-            max-width: 800px; width: 100%;
+            width: 800px;
             margin: 0 auto;
         }
 
-        /* ヘッダー */
+        /* ヘッダー設定 */
         header {
             text-align: center;
             border-bottom: 1px solid #333333;
@@ -59,7 +60,7 @@
             margin-right: 10px;
         }
 
-        /* メインレイアウト */
+        /* レイアウト */
         .content-wrap {
             display: flex;
             gap: 30px;
@@ -102,23 +103,28 @@
             color: #ffffff;
         }
 
-        /* 活動履歴（テーブルで綺麗に整列） */
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
+        /* 活動履歴（dl/dt/ddの表示崩れを防ぐ設定） */
+        .info-list {
             font-size: 0.9em;
+            text-align: left;
             margin-bottom: 40px;
         }
 
-        .info-table td {
-            padding: 4px 0;
-            vertical-align: top;
+        .info-list dl {
+            margin: 0;
+            padding: 0;
         }
 
-        .info-table .date {
+        .info-list dt {
             color: #8a9ea7;
+            float: left;
             width: 100px;
-            white-space: nowrap;
+            clear: left;
+        }
+
+        .info-list dd {
+            margin-left: 105px;
+            margin-bottom: 8px;
         }
 
         .work-item {
@@ -141,16 +147,12 @@
 
 <div class="container">
 
+    <!-- ヘッダー -->
     <header>
         <h1>霧雨巡録社</h1>
     </header>
 
-    <!-- 更新履歴 -->
-    <div class="section-title">更新履歴</div>
-    <div class="update-box">
-        <span class="update-date">2026/07/27</span> Webサイト『霧雨巡録社』開設 / 日記『百記夜行』開設 / アクセスカウンター設置 / 更新履歴設置<br>
-    </div>
-
+    <!-- メインレイアウト -->
     <div class="content-wrap">
 
         <!-- 左側：メニューエリア -->
@@ -168,6 +170,12 @@
 
         <!-- 右側：メインコンテンツ -->
         <main>
+
+            <!-- 更新履歴 -->
+            <div class="section-title">更新履歴</div>
+            <div class="update-box">
+                <span class="update-date">2026/07/27</span> Webサイト『霧雨巡録社』開設 / 日記『百記夜行』開設 / アクセスカウンター設置 / 更新履歴設置<br>
+            </div>
             
             <!-- ① ABOUT -->
             <section id="about" style="margin-bottom: 40px;">
@@ -230,60 +238,63 @@
             <!-- ③ INFORMATION -->
             <section id="info" style="margin-bottom: 40px;">
                 <div class="section-title">活動履歴</div>
-                <table class="info-table">
-                    <tr><td class="date">2025/06/06</td><td>小説『陰鬱な世界を謳歌する』投稿</td></tr>
-                    <tr><td class="date">2025/06/09</td><td>小説『この世界を包む、『皮肉のフルコースをどうぞ。お題はあなたの時間と固定概念です。』投稿</td></tr>
-                    <tr><td class="date">2025/06/11</td><td>小説『担任の先生』投稿</td></tr>
-                    <tr><td class="date">2025/06/25</td><td>小説『実験台のフール達』投稿</td></tr>
-                    <tr><td class="date">2025/11/23</td><td>小説『偏差値71の妖怪怪異譚』投稿</td></tr>
-                    <tr><td class="date">2026/01/11</td><td>pixivで『アリスの赤面』初投稿</td></tr>
-                    <tr><td class="date">2026/01/12</td><td>小説『散開怪花』投稿</td></tr>
-                    <tr><td class="date">2026/01/30</td><td>pixivでイラスト投稿開始</td></tr>
-                    <tr><td class="date">2026/01/30</td><td>小説『東方遠野物語』連載開始</td></tr>
-                    <tr><td class="date">2026/02/03</td><td>短編『東京に住めば済むほど生まれ育った山梨に帰りたいと思った』投稿</td></tr>
-                    <tr><td class="date">2026/02/23</td><td>短編『寝起きで見つけた見慣れない影』投稿</td></tr>
-                    <tr><td class="date">2026/02/26</td><td>評論『馬鹿にされたら否定しよう』投稿</td></tr>
-                    <tr><td class="date">2026/03/16</td><td>小説『ATOMSPHERE』投稿</td></tr>
-                    <tr><td class="date">2026/03/20</td><td>自史『自分史』連載開始</td></tr>
-                    <tr><td class="date">2026/03/23</td><td>評論『超かぐや姫！ ヤチヨ＝かぐやについての徹底討論』投稿</td></tr>
-                    <tr><td class="date">2026/03/29</td><td>小説『古今東西のゆるゆり』連載開始</td></tr>
-                    <tr><td class="date">2026/03/30</td><td>短編『あの日とは違う』投稿</td></tr>
-                    <tr><td class="date">2026/04/06</td><td>評論『オタクは死んだのか？ー第四世代という現象について』投稿</td></tr>
-                    <tr><td class="date">2026/04/08</td><td>『古今東西のゆるゆり』五作品投稿達成</td></tr>
-                    <tr><td class="date">2026/04/12</td><td>短編『友情劇』投稿</td></tr>
-                    <tr><td class="date">2026/04/12</td><td>小説『東方遠野物語−RETOLD−』連載開始</td></tr>
-                    <tr><td class="date">2026/04/17</td><td>短編『異変とわだかまり』投稿</td></tr>
-                    <tr><td class="date">2026/04/18</td><td>pixivでイラスト20作品投稿達成</td></tr>
-                    <tr><td class="date">2026/04/25</td><td>小説『東方遠野物語』10作品投稿達成</td></tr>
-                    <tr><td class="date">2026/04/28</td><td>漫画『月見酒で一杯』投稿</td></tr>
-                    <tr><td class="date">2026/04/29</td><td>評論『社会現象ー冷笑について』投稿</td></tr>
-                    <tr><td class="date">2026/04/29</td><td>漫画『魔理沙の人形制作』投稿</td></tr>
-                    <tr><td class="date">2026/05/06</td><td>小説『星色の監禁』連載開始</td></tr>
-                    <tr><td class="date">2026/05/08</td><td>架空伝記『都創郷 −Canon−』投稿</td></tr>
-                    <tr><td class="date">2026/05/09</td><td>『kuroha07』のブログで日記の連載開始</td></tr>
-                    <tr><td class="date">2026/05/20</td><td>『kuroha07』で10番目の日記の投稿達成</td></tr>
-                    <tr><td class="date">2026/05/21</td><td>pixivでイラスト50作品投稿達成</td></tr>
-                    <tr><td class="date">2026/05/25</td><td>エッセイ『ハルヒの街で風が吹いている。それを私はそこで感じている。』投稿</td></tr>
-                    <tr><td class="date">2026/05/31</td><td>小説『虚ろな裁き』投稿</td></tr>
-                    <tr><td class="date">2026/05/31</td><td>『kuroha07』で20作品投稿達成</td></tr>
-                    <tr><td class="date">2026/06/02</td><td>自伝『編纂史』投稿</td></tr>
-                    <tr><td class="date">2026/06/03</td><td>日誌『日誌史』連載開始</td></tr>
-                    <tr><td class="date">2026/06/03</td><td>評論『MPノート移行しました』連載開始</td></tr>
-                    <tr><td class="date">2026/06/06</td><td>noteでアニメ考察の連載開始</td></tr>
-                    <tr><td class="date">2026/06/11</td><td>小説『？』投稿</td></tr>
-                    <tr><td class="date">2026/06/12</td><td>小説『欲望都市の休楽街』投稿</td></tr>
-                    <tr><td class="date">2026/07/06</td><td>『自分史』50作品投稿達成</td></tr>
-                    <tr><td class="date">2026/07/07</td><td>『kuroha07』で30作品投稿達成</td></tr>
-                    <tr><td class="date">2026/07/08</td><td>『日誌史』25作品投稿達成</td></tr>
-                    <tr><td class="date">2026/07/16</td><td>ペンネームを暮葉から暮葉畏啓に正式変更</td></tr>
-                    <tr><td class="date">2026/07/18</td><td>評論『二つに分断されたオタク大陸をなぜ我々は一括りにして見てしまうのか』投稿</td></tr>
-                    <tr><td class="date">2026/07/21</td><td>構想『summer』制作開始</td></tr>
-                    <tr><td class="date">2026/07/24</td><td>怪談「とちくるってる滑稽な恐怖文章 #666ネット怪談」投稿</td></tr>
-                    <tr><td class="date">2026/07/26</td><td>評論『人間を生物的に見て童貞を正当化する』投稿</td></tr>
-                    <tr><td class="date">2026/07/26</td><td>短編『幻想郷エッセイ #犬走椛』投稿</td></tr>
-                    <tr><td class="date">2026/07/26</td><td>短編『宴会での珍騒動』投稿</td></tr>
-                    <tr><td class="date">2026/07/27</td><td>Webサイト作成・公開</td></tr>
-                </table>
+                <div class="info-list">
+                    <dl>
+                        <dt>2025/06/06</dt><dd>小説『陰鬱な世界を謳歌する』投稿</dd>
+                        <dt>2025/06/09</dt><dd>小説『この世界を包む、『皮肉のフルコースをどうぞ。お題はあなたの時間と固定概念です。』投稿</dd>
+                        <dt>2025/06/11</dt><dd>小説『担任の先生』投稿</dd>
+                        <dt>2025/06/25</dt><dd>小説『実験台のフール達』投稿</dd>
+                        <dt>2025/11/23</dt><dd>小説『偏差値71の妖怪怪異譚』投稿</dd>
+                        <dt>2026/01/11</dt><dd>pixivで『アリスの赤面』初投稿</dd>
+                        <dt>2026/01/12</dt><dd>小説『散開怪花』投稿</dd>
+                        <dt>2026/01/30</dt><dd>pixivでイラスト投稿開始</dd>
+                        <dt>2026/01/30</dt><dd>小説『東方遠野物語』連載開始</dd>
+                        <dt>2026/02/03</dt><dd>短編『東京に住めば済むほど生まれ育った山梨に帰りたいと思った』投稿</dd>
+                        <dt>2026/02/23</dt><dd>短編『寝起きで見つけた見慣れない影』投稿</dd>
+                        <dt>2026/02/26</dt><dd>評論『馬鹿にされたら否定しよう』投稿</dd>
+                        <dt>2026/03/16</dt><dd>小説『ATOMSPHERE』投稿</dd>
+                        <dt>2026/03/20</dt><dd>自史『自分史』連載開始</dd>
+                        <dt>2026/03/23</dt><dd>評論『超かぐや姫！ ヤチヨ＝かぐやについての徹底討論』投稿</dd>
+                        <dt>2026/03/29</dt><dd>小説『古今東西のゆるゆり』連載開始</dd>
+                        <dt>2026/03/30</dt><dd>短編『あの日とは違う』投稿</dd>
+                        <dt>2026/04/06</dt><dd>評論『オタクは死んだのか？ー第四世代という現象について』投稿</dd>
+                        <dt>2026/04/08</dt><dd>『古今東西のゆるゆり』五作品投稿達成</dd>
+                        <dt>2026/04/12</dt><dd>短編『友情劇』投稿</dd>
+                        <dt>2026/04/12</dt><dd>小説『東方遠野物語−RETOLD−』連載開始</dd>
+                        <dt>2026/04/17</dt><dd>短編『異変とわだかまり』投稿</dd>
+                        <dt>2026/04/18</dt><dd>pixivでイラスト20作品投稿達成</dd>
+                        <dt>2026/04/25</dt><dd>小説『東方遠野物語』10作品投稿達成</dd>
+                        <dt>2026/04/28</dt><dd>漫画『月見酒で一杯』投稿</dd>
+                        <dt>2026/04/29</dt><dd>評論『社会現象ー冷笑について』投稿</dd>
+                        <dt>2026/04/29</dt><dd>漫画『魔理沙の人形制作』投稿</dd>
+                        <dt>2026/05/06</dt><dd>小説『星色の監禁』連載開始</dd>
+                        <dt>2026/05/08</dt><dd>架空伝記『都創郷 −Canon−』投稿</dd>
+                        <dt>2026/05/09</dt><dd>『kuroha07』のブログで日記の連載開始</dd>
+                        <dt>2026/05/20</dt><dd>『kuroha07』で10番目の日記の投稿達成</dd>
+                        <dt>2026/05/21</dt><dd>pixivでイラスト50作品投稿達成</dd>
+                        <dt>2026/05/25</dt><dd>エッセイ『ハルヒの街で風が吹いている。それを私はそこで感じている。』投稿</dd>
+                        <dt>2026/05/31</dt><dd>小説『虚ろな裁き』投稿</dd>
+                        <dt>2026/05/31</dt><dd>『kuroha07』で20作品投稿達成</dd>
+                        <dt>2026/06/02</dt><dd>自伝『編纂史』投稿</dd>
+                        <dt>2026/06/03</dt><dd>日誌『日誌史』連載開始</dd>
+                        <dt>2026/06/03</dt><dd>評論『MPノート移行しました』連載開始</dd>
+                        <dt>2026/06/06</dt><dd>noteでアニメ考察の連載開始</dd>
+                        <dt>2026/06/11</dt><dd>小説『？』投稿</dd>
+                        <dt>2026/06/12</dt><dd>小説『欲望都市の休楽街』投稿</dd>
+                        <dt>2026/07/06</dt><dd>『自分史』50作品投稿達成</dd>
+                        <dt>2026/07/07</dt><dd>『kuroha07』で30作品投稿達成</dd>
+                        <dt>2026/07/08</dt><dd>『日誌史』25作品投稿達成</dd>
+                        <dt>2026/07/16</dt><dd>ペンネームを暮葉から暮葉畏啓に正式変更</dd>
+                        <dt>2026/07/18</dt><dd>評論『二つに分断されたオタク大陸をなぜ我々は一括りにして見てしまうのか』投稿</dd>
+                        <dt>2026/07/21</dt><dd>構想『summer』制作開始</dd>
+                        <dt>2026/07/24</dt><dd>怪談「とちくるってる滑稽な恐怖文章 #666ネット怪談」投稿</dd>
+                        <dt>2026/07/26</dt><dd>評論『人間を生物的に見て童貞を正当化する』投稿</dd>
+                        <dt>2026/07/26</dt><dd>短編『幻想郷エッセイ #犬走椛』投稿</dd>
+                        <dt>2026/07/26</dt><dd>短編『宴会での珍騒動』投稿</dd>
+                        <dt>2026/07/27</dt><dd>Webサイト作成・公開</dd>
+                    </dl>
+                    <div style="clear: both;"></div>
+                </div>
             </section>
 
             <!-- ④ 転生先 -->
