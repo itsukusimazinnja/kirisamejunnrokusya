@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白狼神籤</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #dcdcdc;
+            font-family: "MS P明朝", "MS Mincho", "Hiragino Mincho ProN", serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 背景におみくじの画像を指定（パスは実際の画像に変更してね） */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('omikuji_bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .omikuji-container {
+            text-align: center;
+            background-color: rgba(5, 5, 5, 0.85);
+            border: 1px solid #333333;
+            padding: 40px 30px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .title {
+            font-size: 1.2em;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .draw-btn {
+            background-color: #080808;
+            color: #8a9ea7;
+            border: 1px solid #333333;
+            padding: 12px 30px;
+            font-family: inherit;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .draw-btn:hover {
+            border-color: #8a9ea7;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(138, 158, 167, 0.3);
+        }
+
+        .draw-btn:disabled {
+            border-color: #222222;
+            color: #555555;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        /* フェードイン表示 */
+        .result-wrap {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .result-img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #444444;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .result-img.show {
+            opacity: 1;
+        }
+
+        .notice {
+            font-size: 0.85em;
+            color: #888888;
+            margin-top: 15px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #8a9ea7;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="omikuji-container">
+    <div class="title">【 塵が積もった白狼おみくじ 】</div>
+
+    <button id="draw-btn" class="draw-btn">おみくじを引いてみる</button>
+    <div id="notice" class="notice"></div>
+
+    <div id="result-wrap" class="result-wrap">
+        <img id="result-img" class="result-img" src="" alt="おみくじの結果">
+    </div>
+
+    <div>
+        <a href="index.html" class="back-link">← 用語録へ戻る</a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 現在用意している3枚の画像ファイル名
+        const omikujiImages = [
+            'omikuji_1.png',
+            'omikuji_2.png',
+            'omikuji_3.png'
+        ];
+
+        const drawBtn = document.getElementById('draw-btn');
+        const notice = document.getElementById('notice');
+        const resultWrap = document.getElementById('result-wrap');
+        const resultImg = document.getElementById('result-img');
+
+        // 今日の日付を取得 (YYYY-MM-DD)
+        const today = new Date().toLocaleDateString('sv-SE');
+
+        // ローカルストレージの確認
+        const lastDrawnDate = localStorage.getItem('hakuro_omikuji_date');
+        const savedImage = localStorage.getItem('hakuro_omikuji_img');
+
+        // 本日すでに引いている場合
+        if (lastDrawnDate === today && savedImage) {
+            drawBtn.disabled = true;
+            drawBtn.textContent = '運試しは時間を空けて。';
+            notice.textContent = 'そんなに凶を引きたいのですか？';
+
+            resultImg.src = savedImage;
+            resultWrap.style.display = 'block';
+            setTimeout(() => {
+                resultImg.classList.add('show');
+            }, 50);
+        }
+
+        // ボタン押下時
+        drawBtn.addEventListener('click', () => {
+            // タブ（警告アラート）の表示
+            alert('あなたも物好きですね…');
+
+            // 3枚からランダム選択
+            const randomIndex = Math.floor(Math.random() * omikujiImages.length);
+            const selectedImage = omikujiImages[randomIndex];
+
+            // 1日1回の記録を保存
+            localStorage.setItem('hakuro_omikuji_date', today);
+            localStorage.setItem('hakuro_omikuji_img', selectedImage);
+
+            // ボタンの無効化処理
+            drawBtn.disabled = true;
+            drawBtn.textContent = '本日はお引き取りください。長居は危険です。';
+            notice.textContent = '背後を確認しなくてよろしいのですか？';
+
+            // 画像のフェードイン表示
+            resultImg.src = selectedImage;
+            resultWrap.style.display = 'block';
+
+            setTimeout(() => {
+                resultImg.classList.add('show');
+            }, 50);
+        });
+    });
+</script>
+
+</body>
+</html>
