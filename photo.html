@@ -45,10 +45,10 @@
             height: 100%;
             object-fit: cover;
             opacity: 0;
-            transition: opacity 2.5s ease-in-out; /* フェード切替の時間（2.5秒） */
+            transition: opacity 1.2s ease-in-out; /* 2秒間隔に合わせてフェード時間を1.2秒に調整 */
         }
 
-        /* 最初に表示される画像 */
+        /* 表示対象の画像 */
         .img-wrapper img.active {
             opacity: 1;
         }
@@ -90,14 +90,20 @@
 <div class="photo-container">
 
     <div class="img-wrapper">
-        <!-- 変化させる画像を順番に記述 (最初は img0 のみ active クラス) -->
-        <img src="img0.jpg" alt="誰もいない彼岸" class="slide-img active">
-        <img src="img1.jpg" alt="気配" class="slide-img">
-        <img src="img2.jpg" alt="現れた何か" class="slide-img">
+        <!-- 2428 から 2436 までの画像（最初の 2428 のみ active クラス） -->
+        <img src="2428.jpeg" alt="宵の彼岸 記録写真 2428" class="slide-img active">
+        <img src="2429.jpeg" alt="宵の彼岸 記録写真 2429" class="slide-img">
+        <img src="2430.jpeg" alt="宵の彼岸 記録写真 2430" class="slide-img">
+        <img src="2431.jpeg" alt="宵の彼岸 記録写真 2431" class="slide-img">
+        <img src="2432.jpeg" alt="宵の彼岸 記録写真 2432" class="slide-img">
+        <img src="2433.jpeg" alt="宵の彼岸 記録写真 2433" class="slide-img">
+        <img src="2434.jpeg" alt="宵の彼岸 記録写真 2434" class="slide-img">
+        <img src="2435.jpeg" alt="宵の彼岸 記録写真 2435" class="slide-img">
+        <img src="2436.jpeg" alt="宵の彼岸 記録写真 2436" class="slide-img">
     </div>
 
-    <!-- 写真の説明文 -->
-    <div class="caption" id="captionText">誰か…いませんか？</div>
+    <!-- 写真のテキスト -->
+    <div class="caption" id="captionText">……何か写っているのだろうか？</div>
 
     <div class="back-link">
         <a href="javascript:history.back()">← 戻る</a>
@@ -111,9 +117,8 @@
         const caption = document.getElementById('captionText');
         
         let currentIndex = 0;
-        const intervalTime = 2000; // 画像が変わる間隔（4000ms = 4秒）
+        const intervalTime = 2000; // 2秒（2000ms）ごとに切り替え
 
-        // 時間経過で画像を切り替える処理
         const timer = setInterval(() => {
             // 現在の画像を非表示
             images[currentIndex].classList.remove('active');
@@ -124,12 +129,13 @@
                 // 次の画像を表示
                 images[currentIndex].classList.add('active');
 
-                // 最後の画像になった時の特別演出（説明文を強調）
+                // 最後の画像（2436）に達した時のテキスト演出
                 if (currentIndex === images.length - 1) {
+                    caption.textContent = "……そこに、誰かいる。";
                     caption.classList.add('highlight');
                 }
             } else {
-                // ループさせずに最後の画像で停止する場合
+                // 最後の画像で停止
                 images[images.length - 1].classList.add('active');
                 clearInterval(timer);
             }
