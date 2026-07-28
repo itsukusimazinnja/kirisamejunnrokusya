@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>用語集 - 霧雨巡録社</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: #000000;
             color: #dcdcdc;
@@ -25,7 +29,7 @@
             margin: 0 auto;
         }
 
-        /* ヘッダー設定 */
+        /* ヘッダー設定（鳥居の全体が見えるように調整） */
         header {
             text-align: center;
             border-bottom: 1px solid #333333;
@@ -34,10 +38,12 @@
             background-image: 
                 linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 40%),
                 linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%),
-                url('IMG_2416.jpeg');
-            background-size: cover;
-            background-position: center top;
+                url('IMG_2389.jpeg');
+            background-size: contain; /* 拡大せず画像全体を収める */
+            background-repeat: no-repeat;
+            background-position: center center;
             position: relative;
+            min-height: 200px;
         }
 
         header h1 {
@@ -154,7 +160,7 @@
             margin-top: 40px;
             margin-bottom: 25px;
             letter-spacing: 2px;
-            scroll-margin-top: 60px; /* スムーススクロール時のズレ防止 */
+            scroll-margin-top: 60px;
         }
 
         /* 用語集スタイリング */
@@ -166,7 +172,6 @@
             transition: opacity 0.3s ease;
         }
 
-        /* フィルターで非表示にするクラス */
         .keyword-item.is-hidden {
             display: none !important;
         }
@@ -235,7 +240,6 @@
             }
 
             .filter-tab-wrap {
-                position: static;
                 justify-content: space-between;
             }
 
@@ -289,8 +293,7 @@
                  ========================================== -->
             <h2 id="work-atmosphere" class="category-header">【 ATOMSPHERE 】</h2>
 
-
-<div class="keyword-item" data-type="character">
+            <div class="keyword-item" data-type="character">
                 <div class="keyword-name">
                     酒呑童子(しゅてんどうじ)
                     <span class="type-badge">人物</span>
@@ -299,11 +302,6 @@
                     元々は大江山に住み着いている鬼だったが，最近は黄泉の国にいるらしい。性格は頑固で豪傑。腕っぷしだけなら無敗の鬼王。（井の中の蛙，大海を知らず）
                 </div>
             </div>
-
-
-            
-            <!-- ここに「アトモスフェア」関連の項目を追加できます -->
-
 
             <!-- ==========================================
                  2. 陰鬱な世界を謳歌する
@@ -320,11 +318,10 @@
                 </div>
             </div>
 
-
             <!-- ==========================================
-                 3. 散開怪話
+                 3. 散開怪花
                  ========================================== -->
-            <h2 id="work-sankai" class="category-header">【 散開怪花　】</h2>
+            <h2 id="work-sankai" class="category-header">【 散開怪花 】</h2>
 
             <div class="keyword-item" data-type="character">
                 <div class="keyword-name">
@@ -386,7 +383,6 @@
                 </div>
             </div>
 
-
             <!-- ==========================================
                  4. 偏差値71の妖怪怪異譚
                  ========================================== -->
@@ -398,32 +394,29 @@
                     <span class="type-badge">人物</span>
                 </div>
                 <div class="keyword-desc">
-                  酒と本にまみれた拝殿に供えられた鏡。その裏に居るとか居ないとか。大天狗達に崇められている。 
+                    酒と本にまみれた拝殿に供えられた鏡。その裏に居るとか居ないとか。大天狗達に崇められている。 
                 </div>
             </div>
 
-<div class="keyword-item" data-type="character">
+            <div class="keyword-item" data-type="character">
                 <div class="keyword-name">
                     伊吹童子(いぶきどうじ)
                     <span class="type-badge">人物</span>
                 </div>
                 <div class="keyword-desc">
-                  鬼神の頭領。極めて聡明で器も大きい。欠点は鬼に生まれたこと。また、無口なので影が薄い。いや、影が濃すぎるのかも。
+                    鬼神の頭領。極めて聡明で器も大きい。欠点は鬼に生まれたこと。また、無口なので影が薄い。いや、影が濃すぎるのかも。
                 </div>
             </div>
 
-            
             <div class="keyword-item" data-type="character">
                 <div class="keyword-name">
                     茨木童子(いばらきどうじ)
                     <span class="type-badge">人物</span>
                 </div>
                 <div class="keyword-desc">
-                  半身の鬼神。 新参者を嫌うようで、気に入らない奴には死気を送るようだ。見くびれない。
+                    半身の鬼神。 新参者を嫌うようで、気に入らない奴には死気を送るようだ。見くびれない。
                 </div>
             </div>
-
-            
 
             <div class="keyword-item" data-type="character">
                 <div class="keyword-name">
@@ -457,14 +450,13 @@
 
             <div class="keyword-item" data-type="character">
                 <div class="keyword-name">
-                   封開(ふうかい)
+                    封開(ふうかい)
                     <span class="type-badge">人物</span>
                 </div>
                 <div class="keyword-desc">
-                原始帝に使える暴力女。耳が非常に良く、過去の音の残滓まで聴くことができるようだ。性格は短気で極めて凶暴。妖怪のようにしか思えないが、これでも人間なんだってよ。  
+                    原始帝に使える暴力女。耳が非常に良く、過去の音の残滓まで聴くことができるようだ。性格は短気で極めて凶暴。妖怪のようにしか思えないが、これでも人間なんだってよ。  
                 </div>
             </div>
-
 
             <div class="keyword-item" data-type="concept">
                 <div class="keyword-name">
@@ -476,11 +468,9 @@
                     <span style="color: #aaaaaa; display: block; margin-top: 5px; padding-left: 10px; border-left: 2px solid #333333;">
                         払へ給へ清め給へ神ながら幸い給へ<br>
                         守り給へ<br>
-                        
                     </span>
                 </div>
             </div>
-
 
             <!-- ==========================================
                  5. ？
@@ -560,22 +550,42 @@
     document.addEventListener('DOMContentLoaded', () => {
         const filterBtns = document.querySelectorAll('.filter-btn');
         const items = document.querySelectorAll('.keyword-item');
+        const categories = document.querySelectorAll('.category-header');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // アクティブクラスの切り替え
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
                 const filterValue = btn.getAttribute('data-filter');
 
+                // アイテムの表示切替
                 items.forEach(item => {
                     const itemType = item.getAttribute('data-type');
-                    
                     if (filterValue === 'all' || itemType === filterValue) {
                         item.classList.remove('is-hidden');
                     } else {
                         item.classList.add('is-hidden');
+                    }
+                });
+
+                // 表示アイテムがない作品の見出し（h2）を隠す処理
+                categories.forEach(cat => {
+                    let next = cat.nextElementSibling;
+                    let hasVisibleItem = false;
+
+                    while (next && !next.classList.contains('category-header')) {
+                        if (next.classList.contains('keyword-item') && !next.classList.contains('is-hidden')) {
+                            hasVisibleItem = true;
+                            break;
+                        }
+                        next = next.nextElementSibling;
+                    }
+
+                    if (hasVisibleItem || filterValue === 'all') {
+                        cat.style.display = '';
+                    } else {
+                        cat.style.display = 'none';
                     }
                 });
             });
