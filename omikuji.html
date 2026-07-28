@@ -63,22 +63,33 @@
             box-shadow: none;
         }
 
-        /* フェードイン表示 */
+        /* フェードイン表示エリア */
         .result-wrap {
-            margin-top: 30px;
+            margin-top: 25px;
             display: none;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .result-wrap.show {
+            opacity: 1;
         }
 
         .result-img {
             max-width: 100%;
             height: auto;
             border: 1px solid #444444;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
         }
 
-        .result-img.show {
-            opacity: 1;
+        /* 画像下の説明文スタイル */
+        .result-text {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #b0c4de;
+            line-height: 1.6;
+            text-align: left;
+            border-top: 1px dashed #333333;
+            padding-top: 15px;
         }
 
         .notice {
@@ -104,13 +115,15 @@
 <body>
 
 <div class="omikuji-container">
-    <div class="title">【 白狼神社で運試し】</div>
+    <div class="title">【 白狼神社で運試し 】</div>
 
     <button id="draw-btn" class="draw-btn">おみくじを引いてみる</button>
     <div id="notice" class="notice"></div>
 
+    <!-- 結果表示（画像＋説明文） -->
     <div id="result-wrap" class="result-wrap">
         <img id="result-img" class="result-img" src="" alt="おみくじの結果">
+        <div id="result-text" class="result-text"></div>
     </div>
 
     <div>
@@ -120,38 +133,60 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // おみくじ画像のリスト（6種）
-        const omikujiImages = [
-            'omikuji_daikichi.png', // 大吉
-            'omikuji_kichi.png',    // 吉
-            'omikuji_suekichi.png', // 末吉（杏吉）
-            'omikuji_shokichi.png', // 小吉
-            'omikuji_kyou.png',     // 凶
-            'omikuji_daikyou.png'   // 大凶
+        // 画像と説明文の完全対応データ
+        const omikujiData = [
+            {
+                img: 'IMG_2421.jpeg', // 大吉
+                text: '【大吉】今日のあなたは一味違う。風による災害も水による惨劇も今日のあなたとは無縁です。こんなに運が良いのなら普段見えないものが見えるかも。'
+            },
+            {
+                img: 'IMG_2422.jpeg', // 吉
+                text: '【吉】まずまずの運勢。けれど油断は禁物。特にお金に関しては要注意。財布に穴が空いていないか要確認。'
+            },
+            {
+                img: 'IMG_2425.jpeg', // 小吉
+                text: '【小吉】小銭ほどの幸運はすぐにこぼれ落ちます。今あるものを大事にせず、未知の事物を探しに行きましょう。'
+            },
+            {
+                img: 'IMG_2423_2.jpeg', // 末吉
+                text: '【末吉】残り物には福がある。末の福ほど良いものはありません。という考え方もできるけれど、残り物自体には価値はありません。だって誰も要らなかったのですから。'
+            },
+            {
+                img: 'IMG_2424.jpeg', // 凶
+                text: '【凶】逆に運が良いのかも。とりあえず今日のあなたはいつもと違う。その事実を受け入れて慎ましく過ごしましょう。'
+            },
+            {
+                img: 'IMG_2420_2.jpeg', // 大凶
+                text: '【大凶】早く寝ましょう。起きていれば常に嫌な目に遭います。今日は"そういう日"だと受け入れて早く寝ましょう。'
+            }
         ];
 
         const drawBtn = document.getElementById('draw-btn');
         const notice = document.getElementById('notice');
         const resultWrap = document.getElementById('result-wrap');
         const resultImg = document.getElementById('result-img');
+        const resultText = document.getElementById('result-text');
 
         // 今日の日付を取得 (YYYY-MM-DD)
         const today = new Date().toLocaleDateString('sv-SE');
 
         // ローカルストレージの確認
         const lastDrawnDate = localStorage.getItem('hakuro_omikuji_date');
-        const savedImage = localStorage.getItem('hakuro_omikuji_img');
+        const savedIndex = localStorage.getItem('hakuro_omikuji_index');
 
         // 本日すでに引いている場合
-        if (lastDrawnDate === today && savedImage) {
+        if (lastDrawnDate === today && savedIndex !== null) {
             drawBtn.disabled = true;
             drawBtn.textContent = '運試しは時間を空けて。';
             notice.textContent = 'そんなに凶を引きたいのですか？';
 
-            resultImg.src = savedImage;
+            const savedItem = omikujiData[savedIndex];
+            resultImg.src = savedItem.img;
+            resultText.textContent = savedItem.text;
+
             resultWrap.style.display = 'block';
             setTimeout(() => {
-                resultImg.classList.add('show');
+                resultWrap.classList.add('show');
             }, 50);
         }
 
@@ -161,24 +196,25 @@
             alert('あなたも物好きですね…');
 
             // ランダム選択
-            const randomIndex = Math.floor(Math.random() * omikujiImages.length);
-            const selectedImage = omikujiImages[randomIndex];
+            const randomIndex = Math.floor(Math.random() * omikujiData.length);
+            const selectedItem = omikujiData[randomIndex];
 
-            // 1日1回の記録を保存
+            // 1日1回の記録を保存（インデックス番号を保存）
             localStorage.setItem('hakuro_omikuji_date', today);
-            localStorage.setItem('hakuro_omikuji_img', selectedImage);
+            localStorage.setItem('hakuro_omikuji_index', randomIndex);
 
             // ボタンの無効化処理
             drawBtn.disabled = true;
             drawBtn.textContent = '本日はお引き取りください。長居は危険です。';
             notice.textContent = '背後を確認しなくてよろしいのですか？';
 
-            // 画像のフェードイン表示
-            resultImg.src = selectedImage;
-            resultWrap.style.display = 'block';
+            // 内容のセットとフェードイン表示
+            resultImg.src = selectedItem.img;
+            resultText.textContent = selectedItem.text;
 
+            resultWrap.style.display = 'block';
             setTimeout(() => {
-                resultImg.classList.add('show');
+                resultWrap.classList.add('show');
             }, 50);
         });
     });
