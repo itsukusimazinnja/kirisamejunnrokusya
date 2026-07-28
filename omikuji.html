@@ -132,7 +132,6 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // 画像と複数パターンの説明文データ（配列の1番目に元の文章を配置）
         const omikujiData = [
             {
                 img: 'IMG_2421.jpeg', // 大吉
@@ -165,7 +164,7 @@
                 ]
             },
             {
-                img: 'IMG_2423_2.jpeg', // 末吉（杏吉）
+                img: 'IMG_2423_2.jpeg', // 末吉
                 texts: [
                     '【末吉】残り物には福がある。末の福ほど良いものはありません。という考え方もできるけれど、残り物自体には価値はありません。だって誰も要らなかったのですから。',
                     '【末吉】よく知らない運勢が来た！と思っていたのではないでしょうか。そうです、末吉は本当のところ小吉よりも良いのでしょうか。分かりませんよね。ちなみにあなたもそんな感じで周りに思われていますよ。',
@@ -202,57 +201,28 @@
         const resultImg = document.getElementById('result-img');
         const resultText = document.getElementById('result-text');
 
-        // 今日の日付を取得 (YYYY-MM-DD)
-        const today = new Date().toLocaleDateString('sv-SE');
-
-        // ローカルストレージの確認
-        const lastDrawnDate = localStorage.getItem('hakuro_omikuji_date');
-        const savedImgIndex = localStorage.getItem('hakuro_omikuji_img_index');
-        const savedTextIndex = localStorage.getItem('hakuro_omikuji_text_index');
-
-        // 本日すでに引いている場合
-        if (lastDrawnDate === today && savedImgIndex !== null && savedTextIndex !== null) {
-            drawBtn.disabled = true;
-            drawBtn.textContent = '運試しは時間を空けて。';
-            notice.textContent = 'そんなに凶を引きたいのですか？';
-
-            const savedItem = omikujiData[savedImgIndex];
-            resultImg.src = savedItem.img;
-            resultText.textContent = savedItem.texts[savedTextIndex];
-
-            resultWrap.style.display = 'block';
-            setTimeout(() => {
-                resultWrap.classList.add('show');
-            }, 50);
-        }
-
-        // ボタン押下時
+        // ボタン押下時の処理
         drawBtn.addEventListener('click', () => {
-            // タブ（警告アラート）の表示
             alert('あなたも物好きですね…');
 
             // 1. 運勢（画像）をランダム選出
             const randomImgIndex = Math.floor(Math.random() * omikujiData.length);
             const selectedItem = omikujiData[randomImgIndex];
 
-            // 2. その運勢に対応する文章をランダム選出（5つのうち1つ）
+            // 2. 文章をランダム選出
             const randomTextIndex = Math.floor(Math.random() * selectedItem.texts.length);
             const selectedText = selectedItem.texts[randomTextIndex];
 
-            // 1日1回の記録を保存（画像と文章それぞれのインデックスを保存）
-            localStorage.setItem('hakuro_omikuji_date', today);
-            localStorage.setItem('hakuro_omikuji_img_index', randomImgIndex);
-            localStorage.setItem('hakuro_omikuji_text_index', randomTextIndex);
-
-            // ボタンの無効化処理
+            // 3. このセッション（その回の訪問）ではボタンを無効化
             drawBtn.disabled = true;
             drawBtn.textContent = '本日はお引き取りください。長居は危険です。';
-            notice.textContent = '背後を確認しなくてよろしいのですか？';
+            notice.textContent = 'またの訪問をお待ちしております。背後を確認してお帰りください。';
 
-            // 内容のセットとフェードイン表示
+            // 結果をセット
             resultImg.src = selectedItem.img;
             resultText.textContent = selectedText;
 
+            // フェードイン表示
             resultWrap.style.display = 'block';
             setTimeout(() => {
                 resultWrap.classList.add('show');
@@ -260,6 +230,3 @@
         });
     });
 </script>
-
-</body>
-</html>
