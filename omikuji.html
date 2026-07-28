@@ -6,22 +6,21 @@
     <title>白狼神籤</title>
     <style>
         body {
-    background-color: #000000;
-    color: #dcdcdc;
-    font-family: "MS P明朝", "MS Mincho", "Hiragino Mincho ProN", serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* 背景におみくじ筒の画像を配置 */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('omikuji_bg.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-        
+            background-color: #000000;
+            color: #dcdcdc;
+            font-family: "MS P明朝", "MS Mincho", "Hiragino Mincho ProN", serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 背景におみくじ筒の画像を配置 */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('omikuji_bg.jpg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
         .omikuji-container {
             text-align: center;
@@ -105,7 +104,7 @@
 <body>
 
 <div class="omikuji-container">
-    <div class="title">【 塵が積もった白狼おみくじ 】</div>
+    <div class="title">【 白狼神社で運試し】</div>
 
     <button id="draw-btn" class="draw-btn">おみくじを引いてみる</button>
     <div id="notice" class="notice"></div>
@@ -115,17 +114,20 @@
     </div>
 
     <div>
-        <a href="index.html" class="back-link">← 用語録へ戻る</a>
+        <a href="index.html" class="back-link">← 用語集へ戻る</a>
     </div>
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // 現在用意している3枚の画像ファイル名
+        // おみくじ画像のリスト（6種）
         const omikujiImages = [
-            'omikuji_1.png',
-            'omikuji_2.png',
-            'omikuji_3.png'
+            'omikuji_daikichi.png', // 大吉
+            'omikuji_kichi.png',    // 吉
+            'omikuji_suekichi.png', // 末吉（杏吉）
+            'omikuji_shokichi.png', // 小吉
+            'omikuji_kyou.png',     // 凶
+            'omikuji_daikyou.png'   // 大凶
         ];
 
         const drawBtn = document.getElementById('draw-btn');
@@ -153,23 +155,12 @@
             }, 50);
         }
 
-
-        // おみくじ画像のリスト
-const omikujiImages = [
-    'omikuji_daikichi.png', // 大吉
-    'omikuji_kichi.png',    // 吉
-    'omikuji_suekichi.png', // 末吉（杏吉）
-    'omikuji_shokichi.png', // 小吉
-    'omikuji_kyou.png',     // 凶
-    'omikuji_daikyou.png'   // 大凶
-];
-
         // ボタン押下時
         drawBtn.addEventListener('click', () => {
             // タブ（警告アラート）の表示
             alert('あなたも物好きですね…');
 
-            // 3枚からランダム選択
+            // ランダム選択
             const randomIndex = Math.floor(Math.random() * omikujiImages.length);
             const selectedImage = omikujiImages[randomIndex];
 
