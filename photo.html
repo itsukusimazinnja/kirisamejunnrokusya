@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宵の彼岸 - 記録写真</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #dcdcdc;
+            font-family: "MS P明朝", "MS Mincho", "Hiragino Mincho ProN", serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .photo-container {
+            text-align: center;
+            max-width: 800px;
+            width: 90%;
+            padding: 20px;
+        }
+
+        /* 画像表示エリア */
+        .img-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            aspect-ratio: 4 / 3; /* 画像の比率に合わせて調整してください */
+            overflow: hidden;
+            border: 1px solid #333333;
+            background-color: #050505;
+        }
+
+        .img-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 2.5s ease-in-out; /* フェード切替の時間（2.5秒） */
+        }
+
+        /* 最初に表示される画像 */
+        .img-wrapper img.active {
+            opacity: 1;
+        }
+
+        /* 説明文エリア */
+        .caption {
+            margin-top: 25px;
+            font-size: 1.1em;
+            letter-spacing: 2px;
+            color: #aaaaaa;
+            min-height: 1.8em;
+            transition: color 1.5s ease;
+        }
+
+        /* 最終段階で文字を白く光らせる演出 */
+        .caption.highlight {
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+        }
+
+        .back-link {
+            margin-top: 40px;
+        }
+
+        .back-link a {
+            color: #8a9ea7;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .back-link a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="photo-container">
+
+    <div class="img-wrapper">
+        <!-- 変化させる画像を順番に記述 (最初は img0 のみ active クラス) -->
+        <img src="img0.jpg" alt="誰もいない彼岸" class="slide-img active">
+        <img src="img1.jpg" alt="気配" class="slide-img">
+        <img src="img2.jpg" alt="現れた何か" class="slide-img">
+    </div>
+
+    <!-- 写真の説明文 -->
+    <div class="caption" id="captionText">誰か…いませんか？</div>
+
+    <div class="back-link">
+        <a href="javascript:history.back()">← 戻る</a>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const images = document.querySelectorAll('.slide-img');
+        const caption = document.getElementById('captionText');
+        
+        let currentIndex = 0;
+        const intervalTime = 4000; // 画像が変わる間隔（4000ms = 4秒）
+
+        // 時間経過で画像を切り替える処理
+        const timer = setInterval(() => {
+            // 現在の画像を非表示
+            images[currentIndex].classList.remove('active');
+            
+            currentIndex++;
+
+            if (currentIndex < images.length) {
+                // 次の画像を表示
+                images[currentIndex].classList.add('active');
+
+                // 最後の画像になった時の特別演出（説明文を強調）
+                if (currentIndex === images.length - 1) {
+                    caption.classList.add('highlight');
+                }
+            } else {
+                // ループさせずに最後の画像で停止する場合
+                images[images.length - 1].classList.add('active');
+                clearInterval(timer);
+            }
+        }, intervalTime);
+    });
+</script>
+
+</body>
+</html>
