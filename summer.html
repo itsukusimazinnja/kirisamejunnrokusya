@@ -35,6 +35,24 @@
             z-index: 100; pointer-events: none;
         }
 
+        /* メインサイトへの戻りリンク */
+        .back-to-main {
+            position: fixed;
+            top: 12px;
+            left: 20px;
+            z-index: 101;
+            font-size: 0.85em;
+        }
+        .back-to-main a {
+            color: #8a9ea7;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        .back-to-main a:hover {
+            color: #ffffff;
+        }
+
         /* ----------------------------------
            メインコンテナ
         ---------------------------------- */
@@ -194,15 +212,49 @@
             color: #4a5c6d;
             letter-spacing: 2px;
         }
+
+        /* ----------------------------------
+           スマホ対応 (画面幅 600px 以下)
+        ---------------------------------- */
+        @media screen and (max-width: 600px) {
+            body::before, body::after {
+                height: 30px; /* 黒帯を少し補足 */
+            }
+            .back-to-main {
+                top: 6px;
+                left: 12px;
+            }
+            .main-container {
+                margin: 40px 10px 50px;
+                padding: 15px;
+            }
+            .main-title {
+                font-size: 1.7em;
+            }
+            .subtitle {
+                font-size: 0.95em;
+            }
+            .welcome-box {
+                padding: 15px;
+                font-size: 0.85em;
+            }
+            .menu-grid {
+                grid-template-columns: 1fr; /* スマホでは1列に */
+            }
+        }
     </style>
 </head>
 <body>
 
+<!-- メインサイトへ戻るナビゲーション（黒帯上に表示） -->
+<div class="back-to-main">
+    <a href="main.html">← MAIN</a>
+</div>
+
 <div class="main-container">
 
-    <!-- メインビジュアル（ひまわりや港町などのイラスト画像） -->
+    <!-- メインビジュアル -->
     <div class="img-wrapper">
-        <!-- お手持ちの夏イラスト（ひまわり・青空等）に差し替えてください -->
         <img src="summer_top.jpg" alt="SUMMER -15回目の夏休み-">
     </div>
 
@@ -267,7 +319,7 @@
     </div>
 
     <div class="footer">
-         "SUMMER" IS OUR DREAM 
+        "SUMMER" IS OUR DREAM 
     </div>
 
 </div>
