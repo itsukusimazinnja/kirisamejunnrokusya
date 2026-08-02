@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMMER -15回目の夏休み-</title>
+    <style>
+        /* ----------------------------------
+           全体ベース設定
+        ---------------------------------- */
+        body {
+            background-color: #0b0f17; /* 湿度の高い夜影の青黒 */
+            color: #dcdcdc;
+            font-family: "MS P明朝", "MS Mincho", "Hiragino Mincho ProN", serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ----------------------------------
+           映画風上下黒帯（レターボックス）
+        ---------------------------------- */
+        body::before {
+            content: ""; position: fixed; top: 0; left: 0;
+            width: 100%; height: 45px; background-color: #000000;
+            z-index: 100; pointer-events: none;
+        }
+        body::after {
+            content: ""; position: fixed; bottom: 0; left: 0;
+            width: 100%; height: 45px; background-color: #000000;
+            z-index: 100; pointer-events: none;
+        }
+
+        /* ----------------------------------
+           メインコンテナ
+        ---------------------------------- */
+        .main-container {
+            width: 100%;
+            max-width: 780px;
+            margin: 60px auto 80px;
+            padding: 25px;
+            box-sizing: border-box;
+            background: rgba(12, 18, 28, 0.9);
+            border: 1px solid #233145;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+            z-index: 1;
+        }
+
+        /* ----------------------------------
+           ビジュアルエリア（イラスト・タイトル）
+        ---------------------------------- */
+        .img-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9; /* シネマ比率 */
+            overflow: hidden;
+            border: 1px solid #32445e;
+            background-color: #050505;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* 砂嵐（ノイズ）レイヤー */
+        .img-wrapper::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: repeating-radial-gradient(
+                circle at 17% 32%,
+                white,
+                black 0.00085px,
+                rgba(255, 255, 255, 0.05) 0.0001px,
+                rgba(0, 0, 0, 0.5) 0.00025px
+            );
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 10;
+            animation: static-noise 0.2s steps(4) infinite;
+        }
+
+        @keyframes static-noise {
+            0% { transform: translate(0, 0); }
+            10% { transform: translate(-5%, -5%); }
+            20% { transform: translate(-10%, 5%); }
+            30% { transform: translate(5%, -10%); }
+            40% { transform: translate(-5%, 15%); }
+            50% { transform: translate(-10%, 5%); }
+            60% { transform: translate(15%, 0); }
+            70% { transform: translate(0, 10%); }
+            80% { transform: translate(-15%, 0); }
+            90% { transform: translate(10%, 5%); }
+            100% { transform: translate(5%, 0); }
+        }
+
+        .title-header {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 2.2em;
+            letter-spacing: 4px;
+            color: #ffffff;
+            margin: 0;
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #7b99ad;
+            letter-spacing: 3px;
+            margin-top: 6px;
+        }
+
+        /* ----------------------------------
+           ウェルカム説明文エリア
+        ---------------------------------- */
+        .welcome-box {
+            margin: 30px 0 40px;
+            padding: 20px 25px;
+            background: rgba(18, 26, 40, 0.6);
+            border-left: 3px solid #527394;
+            font-size: 0.95em;
+            line-height: 1.9;
+            color: #cccccc;
+            letter-spacing: 1px;
+        }
+
+        /* ----------------------------------
+           カテゴリーリンク（6項目）
+        ---------------------------------- */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .menu-card {
+            background-color: rgba(18, 27, 41, 0.7);
+            border: 1px solid #283950;
+            padding: 18px 20px;
+            text-decoration: none;
+            color: #dcdcdc;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .menu-card:hover {
+            border-color: #7899b5;
+            background-color: rgba(30, 44, 66, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        .card-number {
+            font-size: 0.75em;
+            color: #55728c;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .card-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #e3edf7;
+            letter-spacing: 2px;
+        }
+
+        .card-desc {
+            font-size: 0.8em;
+            color: #8294a6;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        /* フッター */
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #4a5c6d;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+
+    <!-- メインビジュアル（ひまわりや港町などのイラスト画像） -->
+    <div class="img-wrapper">
+        <!-- お手持ちの夏イラスト（ひまわり・青空等）に差し替えてください -->
+        <img src="summer_top.jpg" alt="SUMMER -15回目の夏休み-">
+    </div>
+
+    <!-- タイトル表示 -->
+    <div class="title-header">
+        <h1 class="main-title">SUMMER</h1>
+        <div class="subtitle">- 15回目の夏休み -</div>
+    </div>
+
+    <!-- ウェルカムメッセージ ＆ 簡易説明文 -->
+    <div class="welcome-box">
+        ようこそ、「SUMMER -15回目の夏休み-」の開発・設定アーカイブへ。<br>
+        潮風の匂いが漂う港町、カタカタと鳴る扇風機、ブラウン管テレビのノイズ——。<br>
+        ここには、本作のキャラクター設定、ストーリー構成、地名や思いついた断片的なアイデアを全て集約・分類しています。
+    </div>
+
+    <!-- カテゴリー分岐（6つのメニュー） -->
+    <div class="menu-grid">
+        
+        <!-- 1. 登場人物 -->
+        <a href="character.html" class="menu-card">
+            <span class="card-number">01 / CHARACTER</span>
+            <div class="card-title">登場人物</div>
+            <div class="card-desc">メインキャラ・サブキャラのプロファイル、立ち絵・関係性</div>
+        </a>
+
+        <!-- 2. 世界 -->
+        <a href="world.html" class="menu-card">
+            <span class="card-number">02 / WORLD</span>
+            <div class="card-title">世界</div>
+            <div class="card-desc">平成の港町、畳の和室、地名やマップ・背景設定</div>
+        </a>
+
+        <!-- 3. メインストーリー -->
+        <a href="main_story.html" class="menu-card">
+            <span class="card-number">03 / MAIN STORY</span>
+            <div class="card-title">メインストーリー</div>
+            <div class="card-desc">全体プロット、章ごとの詳細フロー、重要な分岐点</div>
+        </a>
+
+        <!-- 4. サブストーリー -->
+        <a href="sub_story.html" class="menu-card">
+            <span class="card-number">04 / SUB STORY</span>
+            <div class="card-title">サブストーリー</div>
+            <div class="card-desc">各キャラクターの個別ルート、日常エピソード、外伝</div>
+        </a>
+
+        <!-- 5. アイデア -->
+        <a href="idea.html" class="menu-card">
+            <span class="card-number">05 / IDEA</span>
+            <div class="card-title">アイデア</div>
+            <div class="card-desc">演出ギミック、キーワード、思いついたフレーズのメモ</div>
+        </a>
+
+        <!-- 6. 下書き -->
+        <a href="draft.html" class="menu-card">
+            <span class="card-number">06 / DRAFT</span>
+            <div class="card-title">下書き</div>
+            <div class="card-desc">執筆中の脚本稿、ダイアログの素案、未整理の草案</div>
+        </a>
+
+    </div>
+
+    <div class="footer">
+        PROJECT "SUMMER" ARCHIVE SYSTEM
+    </div>
+
+</div>
+
+</body>
+</html>
